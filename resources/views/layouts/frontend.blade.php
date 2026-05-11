@@ -33,16 +33,16 @@
 
       <!-- DESKTOP MENU -->
       <ul class="nav-links">
-        <li><a href="{{ URL::to('/') }}">Home</a></li>
-        <li><a href="{{ URL::to('/about') }}">About</a></li>
-        <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
-        <li><a href="{{ URL::to('/services') }}">Services</a></li>
+        <li><a href="{{ URL::to('/') }}"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="{{ URL::to('/about') }}"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="{{ URL::to('/courses') }}"><i class="fa-solid fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="{{ URL::to('/services') }}"> <i class="fa-solid fa-bag-shopping"></i> Services</a></li>
       </ul>
 
       <!-- RIGHT BUTTONS -->
       <div class="nav-right">
         <a href="{{ URL::to('/contact') }}" class="contact-btn">
-          Contact Us
+        <i class="fa-solid fa-phone"></i>  Contact Us
         </a>
 
         <!-- MOBILE TOGGLE -->
@@ -164,11 +164,11 @@
           <h4>Our Services</h4>
 
           <ul>
-            <li><a href="{{ URL::to('/gst') }}">GST Filing</a></li>
-            <li><a href="{{ URL::to('/income') }}">Income Tax</a></li>
-            <li><a href="{{ URL::to('/company') }}">Company Registration</a></li>
-            <li><a href="{{ URL::to('/accounting') }}">Accounting Solutions</a></li>
-            <li><a href="{{ URL::to('/consultancy') }}">Business Consultancy</a></li>
+            <li><a href="{{ route('service.detail', 5) }}">GST Filing</a></li>
+            <li><a href="{{ route('service.detail', 2) }}">Income Tax</a></li>
+            <li><a href="{{ route('service.detail', 6) }}">Company Registration</a></li>
+            <li><a href="{{ route('service.detail', 1) }}">Audit Services</a></li>
+            <li><a href="{{ route('service.detail', 4) }}">Business Consultancy</a></li>
           </ul>
 
         </div>

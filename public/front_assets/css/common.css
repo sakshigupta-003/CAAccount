@@ -34,6 +34,9 @@ margin-top: 10px;
 }
 
 /* MENU */
+/* ============================================
+   NAVBAR LINKS - ANIMATED HOVER EFFECTS
+   ============================================ */
 
 .nav-links {
     display: flex;
@@ -49,11 +52,186 @@ margin-top: 10px;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
 }
+
+/* Icon animation on hover */
+.nav-links li a i {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.nav-links li a:hover i {
+    transform: translateY(-2px) scale(1.1);
+}
+
+
+
 .nav-links li a:hover::after {
     width: 100%;
+}
+
+/* Text color transition on hover */
+.nav-links li a:hover {
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+
+/* Active link styling (when on current page) */
+.nav-links li a.active {
+    color: #0f172a;
+}
+
+.nav-links li a.active::after {
+    width: 100%;
+    background: linear-gradient(90deg, #0f172a, #ffffff);
+}
+
+/* ============================================
+   ADDITIONAL ANIMATION VARIANTS (Choose one)
+   ============================================ */
+
+/* VARIANT 1: Slide In Underline (Default - from center) */
+.nav-links--center-line li a::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+}
+
+.nav-links--center-line li a:hover::after {
+    width: 80%;
+}
+
+/* VARIANT 2: Scale Up Effect */
+.nav-links--scale li a {
+    transition: transform 0.3s ease;
+}
+
+.nav-links--scale li a:hover {
+    transform: scale(1.08);
+    color: #0f172a;
+}
+
+.nav-links--scale li a::after {
+    display: none;
+}
+
+/* VARIANT 3: Slide Up Underline */
+.nav-links--slide-up li a::after {
+    bottom: -5px;
+    height: 3px;
+}
+
+.nav-links--slide-up li a:hover::after {
+    width: 100%;
+}
+
+.nav-links--slide-up li a:hover {
+    transform: translateY(-2px);
+}
+
+/* VARIANT 4: Glowing Effect */
+.nav-links--glow li a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.nav-links--glow li a::after {
+    background: #ffffff;
+    box-shadow: 0 0 6px #ffffff;
+}
+
+/* VARIANT 5: Bounce Effect */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.nav-links--bounce li a:hover {
+    animation: bounce 0.4s ease;
+}
+
+/* VARIANT 6: Pulsing Icon */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.nav-links--pulse li a:hover i {
+    animation: pulse 0.4s ease;
+}
+
+/* ============================================
+   PROFESSIONAL COMBINED EFFECT (Recommended)
+   ============================================ */
+.nav-links--pro li a {
+    gap: 10px;
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.nav-links--pro li a i {
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.nav-links--pro li a:hover i {
+    transform: translateY(-3px) scale(1.15);
+    color: #0f172a;
+}
+
+.nav-links--pro li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #0f172a, #ffffff);
+    transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.nav-links--pro li a:hover::before {
+    left: 0;
+}
+
+.nav-links--pro li a::after {
+    display: none;
+}
+
+.nav-links--pro li a:hover {
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE TOUCH DEVICES
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-links li a {
+        font-size: 14px;
+        gap: 6px;
+    }
+    
+    .nav-links li a i {
+        font-size: 12px;
+    }
+    
+    .nav-links li a:hover {
+        transform: none; /* Disable translate on mobile for better UX */
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - Focus States
+   ============================================ */
+.nav-links li a:focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 
@@ -69,14 +247,217 @@ margin-top: 10px;
 
 .contact-btn {
     text-decoration: none;
-  background: transparent;
+    background: transparent;
     color: #fff;
     border: 3px solid #fff;
     padding: 12px 24px;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ============================================
+   HOVER TRANSFORM ANIMATIONS
+   ============================================ */
+
+/* OPTION 1: Lift Up + Scale (Recommended) */
+.contact-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* OPTION 2: Slide Right */
+.contact-btn--slide:hover {
+    transform: translateX(5px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 3: Rotate Slightly */
+.contact-btn--rotate:hover {
+    transform: rotate(2deg) scale(1.02);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 4: Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.contact-btn--pulse:hover {
+    animation: pulse 0.6s ease;
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 5: Shine Effect (Glassmorphism) */
+.contact-btn--shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn--shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.contact-btn--shine:hover::before {
+    left: 100%;
+}
+
+.contact-btn--shine:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 6: Bounce Effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.contact-btn--bounce:hover {
+    animation: bounce 0.4s ease;
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 7: Expand Width (for buttons with icons) */
+.contact-btn--expand {
+    gap: 8px;
+}
+
+.contact-btn--expand i {
+    transition: transform 0.3s ease;
+}
+
+.contact-btn--expand:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+    gap: 12px;
+}
+
+.contact-btn--expand:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   PROFESSIONAL COMBINED EFFECT (Recommended)
+   ============================================ */
+.contact-btn--pro {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.contact-btn--pro::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.contact-btn--pro:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.contact-btn--pro:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn--pro:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ============================================
+   ACTIVE STATE (Click Feedback)
+   ============================================ */
+.contact-btn:active {
+    transform: translateY(1px) scale(0.97);
+    transition: all 0.05s ease;
+}
+
+/* ============================================
+   ICON WITHIN BUTTON (if present)
+   ============================================ */
+.contact-btn i {
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   RESPONSIVE TOUCH DEVICES
+   ============================================ */
+@media (max-width: 768px) {
+    .contact-btn:hover {
+        transform: translateY(-2px); /* Reduced lift on mobile */
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - Focus State
+   ============================================ */
+.contact-btn:focus-visible {
+    outline: 3px solid #ffd966;
+    outline-offset: 3px;
+    border-radius: 10px;
 }
 
 

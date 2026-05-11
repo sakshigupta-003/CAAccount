@@ -6,20 +6,34 @@
 
 @push('scripts')
 <script src="{{ asset('front_assets/js/index.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 @endpush
 @section('content')
 <!-- ========================
-     HERO SECTION WITH POPUP (Banner Only)
+     HERO SECTION WITH AUTOMATIC SLIDER
 ========================= -->
 <section class="hero" aria-label="Hero section with financial solutions">
-  <img 
-    class="hero__bg" 
-    src="{{ asset('front_assets/images/banner7.avif') }}"     
-    alt="Professional accounting and financial planning workspace" 
-    loading="eager"
-  >
+  
+  <!-- Slider Container -->
+  <div class="hero-slider">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <img src="{{ asset('front_assets/images/banner7.avif') }}" alt="Financial planning" class="hero__bg">
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img src="{{ asset('front_assets/images/banner8.jpg') }}" alt="Accounting services" class="hero__bg">
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img src="{{ asset('front_assets/images/banner9.jpg') }}" alt="Tax consultation" class="hero__bg">
+    </div>
+  </div>
+
+  <!-- Overlay (same for all slides) -->
   <div class="hero__overlay" aria-hidden="true"></div>
   
+  <!-- Content (same for all slides) -->
   <div class="hero__container">
     <div class="hero__content">
       <h1 class="hero__title">Unlock Your Financial Potential with Accountech</h1>
@@ -28,12 +42,27 @@
     </div>
   </div>
 
-  <!-- Dashboard Button (inside hero, positioned absolute) -->
+  <!-- Navigation Arrows -->
+  <button class="slider-arrow prev" id="prevSlide">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="slider-arrow next" id="nextSlide">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
+  <!-- Dots/Indicators -->
+  <div class="slider-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+  </div>
+
+  <!-- Dashboard Button -->
   <button class="open-dashboard-btn" id="openDashboardBtn">
     <i class="fas fa-chart-line"></i> Open Financial Dashboard
   </button>
 
-  <!-- Dashboard Popup (inside hero, positioned absolute) -->
+  <!-- Dashboard Popup -->
   <div class="dashboard-popup" id="dashboardPopup">
     <div class="popup-header">
       <div>
@@ -44,9 +73,7 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-
     <div class="dashboard-content">
-      <!-- Stats Row 1 -->
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-label">Businesses of</div>
@@ -59,8 +86,6 @@
           <div class="stat-trend"><i class="fas fa-chart-line"></i> Year over Year</div>
         </div>
       </div>
-
-      <!-- Stats Row 2 -->
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-label">Time Saved</div>
@@ -73,8 +98,6 @@
           <div class="stat-trend"><i class="fas fa-users"></i> +23 this week</div>
         </div>
       </div>
-
-      <!-- Bar Chart -->
       <div class="chart-container">
         <div class="chart-title">
           <i class="fas fa-chart-column" style="color: rgb(19, 137, 201);"></i> 
@@ -82,8 +105,6 @@
         </div>
         <canvas id="revenueChart" width="400" height="180"></canvas>
       </div>
-
-      <!-- Line Chart -->
       <div class="chart-container">
         <div class="chart-title">
           <i class="fas fa-chart-line" style="color: rgb(19, 137, 201);"></i> 
@@ -91,8 +112,6 @@
         </div>
         <canvas id="timeSavedChart" width="400" height="180"></canvas>
       </div>
-
-      <!-- Security Badge -->
       <div class="security-badge">
         <i class="fas fa-shield-alt"></i>
         <div>
@@ -104,7 +123,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- Chat Popup Widget -->
 <div class="chat-widget">
@@ -192,29 +210,29 @@
       
     </div>
 
-    <!-- BOTTOM CARDS SECTION -->
-    <div class="bottom-image">
-      <div class="aboutcards">
+   <!-- BOTTOM CARDS SECTION -->
+<div class="bottom-image">
+    <div class="aboutcards">
         <!-- Card 1 -->
         <div class="card" data-card="1">
-          <img src="{{ asset('front_assets/images/Whats-New-img.jpg')}}" alt="What's New" class="card__image">
-          <h3 class="card__title"><i class="fas fa-newspaper"></i> WHAT'S NEW</h3>
-          <button class="card__btn" data-btn="1">Read More</button>
+            <img src="{{ asset('front_assets/images/Whats-New-img.jpg') }}" alt="What's New" class="card__image">
+            <h3 class="card__title"><i class="fas fa-newspaper"></i> WHAT'S NEW</h3>
+            <a href="{{ route('about.detail', 1) }}" class="card__btn">Read More</a>
         </div>
         <!-- Card 2 -->
         <div class="card" data-card="2">
-          <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
-          <h3 class="card__title"><i class="fas fa-calendar-alt"></i> EVENT CALENDAR</h3>
-          <button class="card__btn" data-btn="2">Read More</button>
+            <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
+            <h3 class="card__title"><i class="fas fa-calendar-alt"></i> EVENT CALENDAR</h3>
+            <a href="{{ route('about.detail', 2) }}" class="card__btn">Read More</a>
         </div>
         <!-- Card 3 -->
         <div class="card" data-card="3">
-          <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
-          <h3 class="card__title"><i class="fas fa-briefcase"></i> CAREER</h3>
-          <button class="card__btn" data-btn="3">Read More</button>
+            <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
+            <h3 class="card__title"><i class="fas fa-briefcase"></i> CAREER</h3>
+            <a href="{{ route('about.detail', 3) }}" class="card__btn">Read More</a>
         </div>
-      </div>
     </div>
+</div>
   </div>
 </section>
 
