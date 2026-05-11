@@ -1127,10 +1127,10 @@ background: rgb(19, 137, 201);
       min-height: 50vh;
     }
     .back-btn {
-      top: 20px;
-      left: 20px;
+      top: 85px;
+      left: 5px;
       font-size: 0.85rem;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 1rem;
     }
     .about-header {
       padding: 1.5rem;

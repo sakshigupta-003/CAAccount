@@ -51,3 +51,44 @@ document.addEventListener('DOMContentLoaded', function() {
     updateNavbarOnScroll();
     window.addEventListener('scroll', updateNavbarOnScroll);
 });
+(function() {
+    const sidebar = document.getElementById('mobileSidebar');
+    const closeBtn = document.getElementById('menuCloseBtn');
+    const overlay = document.querySelector('.sidebar-overlay');
+    
+    // Create overlay if not exists
+    if (!overlay) {
+      const newOverlay = document.createElement('div');
+      newOverlay.className = 'sidebar-overlay';
+      newOverlay.id = 'sidebarOverlay';
+      document.body.appendChild(newOverlay);
+    }
+    
+    const sidebarOverlay = document.getElementById('sidebarOverlay') || document.querySelector('.sidebar-overlay');
+    
+    function openSidebar() {
+      if (sidebar) sidebar.classList.add('active');
+      if (sidebarOverlay) sidebarOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeSidebar() {
+      if (sidebar) sidebar.classList.remove('active');
+      if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+    
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
+        closeSidebar();
+      }
+    });
+    
+    // Export functions globally if needed
+    window.openSidebar = openSidebar;
+    window.closeSidebar = closeSidebar;
+  })();

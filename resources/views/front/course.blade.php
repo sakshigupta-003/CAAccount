@@ -65,7 +65,7 @@
             <span><i class="fas fa-clock"></i> 6 weeks</span>
             <span><i class="fas fa-users"></i> Beginner</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 1) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -84,7 +84,7 @@
             <span><i class="fas fa-clock"></i> 8 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 2) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -103,7 +103,7 @@
             <span><i class="fas fa-clock"></i> 5 weeks</span>
             <span><i class="fas fa-users"></i> Beginner to Advanced</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 3) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -122,7 +122,7 @@
             <span><i class="fas fa-clock"></i> 10 weeks</span>
             <span><i class="fas fa-users"></i> All Levels</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 4) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -141,7 +141,7 @@
             <span><i class="fas fa-clock"></i> 9 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 5) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
        <!-- Course Card 6 -->
@@ -159,7 +159,7 @@
             <span><i class="fas fa-clock"></i> 8 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 6) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       

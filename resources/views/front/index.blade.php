@@ -247,7 +247,7 @@
             <span><i class="fas fa-clock"></i> 6 weeks</span>
             <span><i class="fas fa-users"></i> Beginner</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 1) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -266,7 +266,7 @@
             <span><i class="fas fa-clock"></i> 8 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 2) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -285,7 +285,7 @@
             <span><i class="fas fa-clock"></i> 5 weeks</span>
             <span><i class="fas fa-users"></i> Beginner to Advanced</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 3) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -304,7 +304,7 @@
             <span><i class="fas fa-clock"></i> 10 weeks</span>
             <span><i class="fas fa-users"></i> All Levels</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 4) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -323,7 +323,7 @@
             <span><i class="fas fa-clock"></i> 9 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 5) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
        <!-- Course Card 6 -->
@@ -341,7 +341,7 @@
             <span><i class="fas fa-clock"></i> 8 weeks</span>
             <span><i class="fas fa-users"></i> Intermediate</span>
           </div>
-          <a href="#" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('course.detail', 6) }}" class="course-btn">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -371,7 +371,7 @@
         </div>
         <h3 class="service-card-title">Audit Services</h3>
         <p class="service-description">Accurate and efficient audit services to ensure compliance and maintain financial integrity.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 1) }}" class="service-link">Learn More →</a>
       </div>
 
       <!-- Card 2 -->
@@ -381,7 +381,7 @@
         </div>
         <h3 class="service-card-title">Income Tax Preparation</h3>
         <p class="service-description">Expert tax preparation services to ensure compliance and maximize your tax savings.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 2) }}" class="service-link">Learn More →</a>
       </div>
 
       <!-- Card 3 -->
@@ -391,7 +391,7 @@
         </div>
         <h3 class="service-card-title">Financial Planning</h3>
         <p class="service-description">Comprehensive financial planning services to help you achieve your long-term financial goals.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 3) }}" class="service-link">Learn More →</a>
       </div>
 
       <!-- Card 4 -->
@@ -401,7 +401,7 @@
         </div>
         <h3 class="service-card-title">Business Consulting</h3>
         <p class="service-description">Professional consulting services to provide strategic financial advice and solutions for your business.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 4) }}" class="service-link">Learn More →</a>
       </div>
 
       <!-- Card 5 -->
@@ -411,7 +411,7 @@
         </div>
         <h3 class="service-card-title">GST Services</h3>
         <p class="service-description">Comprehensive GST services to support your business operations and financial management.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 5) }}" class="service-link">Learn More →</a>
       </div>
 
       <!-- Card 6 -->
@@ -421,7 +421,7 @@
         </div>
         <h3 class="service-card-title">Company Registration</h3>
         <p class="service-description">Comprehensive company registration services to support your business operations and financial management.</p>
-        <a href="#" class="service-link">Learn More →</a>
+        <a href="{{ route('service.detail', 6) }}" class="service-link">Learn More →</a>
       </div>
     </div>
   </div>

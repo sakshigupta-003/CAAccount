@@ -119,20 +119,7 @@ margin-top: 10px;
     }
 
 }
-/* MOBILE SIDEBAR */
 
-.mobile-sidebar {
-    position: fixed;
-    top: 0;
-    right: -320px;
-    width: 300px;
-    height: 100vh;
-    background: #ffffff;
-    z-index: 99999;
-    padding: 80px 30px;
-    transition: 0.4s ease;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
-}
 
 .mobile-sidebar.active {
     right: 0;
@@ -563,4 +550,529 @@ margin-top: 10px;
         padding-top: 50px;
     }
 
+}
+/* ============================================
+   MOBILE SIDEBAR - CLEAN & PROFESSIONAL
+   ============================================ */
+
+/* Sidebar Container */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    max-width: 85%;
+    height: 100vh;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    z-index: 10000;
+    padding: 30px 24px;
+    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-sidebar.active {
+    left: 0;
+}
+
+/* Scrollbar Styling */
+.mobile-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb {
+    background: rgb(19, 137, 201);
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(19, 137, 201, 0.1);
+    border: none;
+    color: rgb(19, 137, 201);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-sidebar:hover {
+    background: rgb(19, 137, 201);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Logo Wrapper */
+.mobile-logo-wrapper {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(19, 137, 201, 0.1);
+}
+
+.mobile-navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-navbar-logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.mobile-navbar-logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0a2540, rgb(19, 137, 201));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* Mobile Navigation Links */
+.mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.mobile-links li {
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-links li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background: transparent;
+    letter-spacing: -0.2px;
+}
+
+/* Menu Icons using pseudo-elements */
+.mobile-links li:nth-child(1) a::before { 
+    content: '\f015'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 600; 
+    width: 24px; 
+    color: rgb(19, 137, 201); 
+}
+.mobile-links li:nth-child(2) a::before { 
+    content: '\f007'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 600; 
+    width: 24px; 
+    color: rgb(19, 137, 201); 
+}
+.mobile-links li:nth-child(3) a::before { 
+    content: '\f19d'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 600; 
+    width: 24px; 
+    color: rgb(19, 137, 201); 
+}
+.mobile-links li:nth-child(4) a::before { 
+    content: '\f0f2'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 600; 
+    width: 24px; 
+    color: rgb(19, 137, 201); 
+}
+
+.mobile-links li a:hover {
+    background: rgba(19, 110, 201, 0.08);
+    color: rgb(19, 137, 201);
+    padding-left: 22px;
+    transform: translateX(8px);
+}
+
+.mobile-links li a:active {
+    background: rgba(19, 110, 201, 0.15);
+    transform: scale(0.98);
+}
+
+/* Divider line before buttons */
+.mobile-links::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 1.2rem 0 0 0;
+    width: 100%;
+}
+
+/* Buttons Container */
+.mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(19, 137, 201, 0.1);
+    border-bottom: 1px solid rgba(19, 137, 201, 0.1);
+}
+
+/* Support Button */
+.mobile-buttons .support-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 60px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    border: 1.5px solid rgba(19, 137, 201, 0.4);
+    color: rgb(19, 137, 201);
+}
+
+.mobile-buttons .support-btn i {
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.mobile-buttons .support-btn:hover {
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    color: #fff;
+    border-color: rgb(19, 137, 201);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 137, 201, 0.15);
+}
+
+.mobile-buttons .support-btn:hover i {
+    transform: scale(1.05);
+}
+
+/* Contact Button */
+.mobile-buttons .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 60px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(19, 137, 201), #0f53ab);
+    border: none;
+    color: white;
+    box-shadow: 0 6px 14px rgba(19, 137, 201, 0.25);
+}
+
+.mobile-buttons .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(19, 137, 201, 0.35);
+    gap: 14px;
+}
+
+.mobile-buttons .contact-btn:active {
+    transform: translateY(1px);
+}
+
+/* ============================================
+   SOCIAL ICONS WITH REAL BRAND COLORS
+   ============================================ */
+.mobile-sidebar .footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.mobile-sidebar .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Facebook - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(1) {
+    background: #1877f2;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(24, 119, 242, 0.3);
+}
+
+/* Instagram - Real Brand Gradient */
+.mobile-sidebar .footer-social a:nth-child(2) {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(220, 39, 67, 0.3);
+}
+
+/* LinkedIn - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(3) {
+    background: #0a66c2;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(10, 102, 194, 0.3);
+}
+
+/* Twitter/X - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(4) {
+    background: #000000;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(5) {
+    background: #25d366;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
+}
+
+/* Optional: Add YouTube if needed */
+.mobile-sidebar .footer-social a:nth-child(6) {
+    background: #ff0000;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3);
+}
+
+/* Overlay Background */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Focus States */
+.mobile-links li a:focus-visible,
+.mobile-buttons .support-btn:focus-visible,
+.mobile-buttons .contact-btn:focus-visible {
+    outline: 3px solid #ffb347;
+    outline-offset: 2px;
+    border-radius: 16px;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Mobile (480px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .mobile-sidebar {
+        width: 350px;
+        left: -350px;
+        padding: 30px 24px;
+    }
+    
+    .mobile-navbar-logo img {
+        height: 50px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    .mobile-links li a {
+        padding: 16px 20px;
+        font-size: 1.05rem;
+    }
+    
+    .mobile-buttons .support-btn,
+    .mobile-buttons .contact-btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .mobile-sidebar .footer-social a {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+    .mobile-sidebar {
+        width: 280px;
+        left: -280px;
+        padding: 20px 18px;
+    }
+    
+    .close-sidebar {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-navbar-logo img {
+        height: 38px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-links li a {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+    
+    .mobile-buttons .support-btn,
+    .mobile-buttons .contact-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-sidebar .footer-social {
+        gap: 12px;
+    }
+    
+    .mobile-sidebar .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+    
+    .mobile-logo-wrapper {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Very Small Devices (below 360px) */
+@media (max-width: 360px) {
+    .mobile-sidebar {
+        width: 260px;
+        left: -260px;
+        padding: 16px 14px;
+    }
+    
+    .logo-text {
+        display: none;
+    }
+    
+    .mobile-navbar-logo img {
+        height: 40px;
+    }
+    
+    .mobile-links li a {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+    
+    .mobile-sidebar .footer-social {
+        gap: 10px;
+    }
+    
+    .mobile-sidebar .footer-social a {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Devices (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mobile-sidebar {
+        width: 380px;
+        left: -380px;
+    }
+    
+    .mobile-navbar-logo img {
+        height: 55px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .mobile-links li a {
+        padding: 18px 22px;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-sidebar .footer-social a {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Desktop (when sidebar is visible on larger screens if needed) */
+@media (min-width: 1025px) {
+    .mobile-sidebar {
+        width: 400px;
+        left: -400px;
+    }
 }

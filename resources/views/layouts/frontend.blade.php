@@ -56,52 +56,48 @@
 
   </nav>
 
-  <!-- MOBILE SIDEBAR -->
-  <div class="mobile-sidebar" id="mobileSidebar">
+ <!-- MOBILE SIDEBAR -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <!-- CLOSE BUTTON -->
+  <button class="close-sidebar" id="menuCloseBtn">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
 
-    <!-- CLOSE BUTTON -->
-    <button class="close-sidebar" id="menuCloseBtn">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <!-- MOBILE LINKS -->
-    <ul class="mobile-links">
-
-      <li><a href="{{ URL::to('/') }}">Home</a></li>
-
-      <li><a href="{{ URL::to('/about') }}">About</a></li>
-
-      <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
-
-      <li><a href="{{ URL::to('/services') }}">Services</a></li>
-
-      <!-- buttons -->
-      <a href="{{ URL::to('/contact') }}" class="support-btn">
-        <i class="fa-solid fa-headset"></i>
-        Support
-      </a>
-
-      <a href="{{ URL::to('/contact') }}" class="contact-btn">
-        Contact Us
-      </a>
-
-    </ul>
-    <div class="footer-social">
-
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-      <a href="#"><i class="fab fa-instagram"></i></a>
-
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-      <a href="#"><i class="fab fa-twitter"></i></a>
-
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-
-    </div>
-
+  <!-- LOGO -->
+  <div class="mobile-logo-wrapper">
+    <a class="mobile-navbar-logo" href="{{ URL::to('/') }}">
+      <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
+      <span class="logo-text">Accountech</span>
+    </a>
   </div>
 
+  <!-- MOBILE LINKS -->
+  <ul class="mobile-links">
+    <li><a href="{{ URL::to('/') }}">Home</a></li>
+    <li><a href="{{ URL::to('/about') }}">About</a></li>
+    <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
+    <li><a href="{{ URL::to('/services') }}">Services</a></li>
+  </ul>
+
+  <!-- Buttons -->
+  <div class="mobile-buttons">
+    <a href="{{ URL::to('/contact') }}" class="support-btn">
+      <i class="fa-solid fa-headset"></i> Support
+    </a>
+    <a href="{{ URL::to('/contact') }}" class="contact-btn">
+      Contact Us
+    </a>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
   <!-- OVERLAY -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -183,11 +179,11 @@
           <h4>Courses</h4>
 
           <ul>
-            <li><a href="{{ URL::to('/tally') }}">Tally Prime</a></li>
-            <li><a href="{{ URL::to('/gst-course') }}">GST Course</a></li>
-            <li><a href="{{ URL::to('/excel') }}">Advanced Excel</a></li>
-            <li><a href="{{ URL::to('/accounting-training') }}">Accounting Training</a></li>
-            <li><a href="{{ URL::to('/taxation') }}">Taxation Course</a></li>
+            <li><a href="{{ route('course.detail', 1) }}">Tally Prime</a></li>
+            <li><a href="{{ route('course.detail', 2) }}">GST Course</a></li>
+            <li><a href="{{ route('course.detail', 3) }}">Advanced Excel</a></li>
+            <li><a href="{{ route('course.detail', 4) }}">Accounting Training</a></li>
+            <li><a href="{{ route('course.detail', 5) }}">Taxation Course</a></li>
           </ul>
 
         </div>
