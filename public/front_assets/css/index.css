@@ -315,6 +315,7 @@ background: rgb(19, 137, 201);
     cursor: pointer;
     transition: all 0.3s ease;
     width: fit-content;
+    text-decoration: none;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);

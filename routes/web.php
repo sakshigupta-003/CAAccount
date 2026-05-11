@@ -2,16 +2,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CourseController;
 use App\Http\Controllers\Front\ServiceController;
+use App\Http\Controllers\Front\AboutController;
+
 
 // Frontend
 
 Route::get('/', function () {
     return view('front.index');
 })->name('home');
-
-Route::get('/about', function () {
-    return view('front.about');
-})->name('about');
+// About routes
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about/{id}', [AboutController::class, 'show'])->name('about.detail');
 Route::get('/courses', function () {
     return view('front.course');
 })->name('courses');
@@ -55,11 +56,6 @@ Route::get('/course/enroll/{id}', function ($id) {
     return redirect()->route('courses.index')->with('success', 'Course added to cart!');
 })->name('course.enroll');
 
-
-
-Route::get('/services', function () {
-    return view('front.service');
-})->name('services');
 
 // Service routes
 Route::get('/services', [ServiceController::class, 'index'])->name('services');

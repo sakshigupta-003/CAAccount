@@ -192,29 +192,29 @@
       
     </div>
 
-    <!-- BOTTOM CARDS SECTION -->
-    <div class="bottom-image">
-      <div class="aboutcards">
+   <!-- BOTTOM CARDS SECTION -->
+<div class="bottom-image">
+    <div class="aboutcards">
         <!-- Card 1 -->
         <div class="card" data-card="1">
-          <img src="{{ asset('front_assets/images/Whats-New-img.jpg')}}" alt="What's New" class="card__image">
-          <h3 class="card__title"><i class="fas fa-newspaper"></i> WHAT'S NEW</h3>
-          <button class="card__btn" data-btn="1">Read More</button>
+            <img src="{{ asset('front_assets/images/Whats-New-img.jpg') }}" alt="What's New" class="card__image">
+            <h3 class="card__title"><i class="fas fa-newspaper"></i> WHAT'S NEW</h3>
+            <a href="{{ route('about.detail', 1) }}" class="card__btn">Read More</a>
         </div>
         <!-- Card 2 -->
         <div class="card" data-card="2">
-          <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
-          <h3 class="card__title"><i class="fas fa-calendar-alt"></i> EVENT CALENDAR</h3>
-          <button class="card__btn" data-btn="2">Read More</button>
+            <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
+            <h3 class="card__title"><i class="fas fa-calendar-alt"></i> EVENT CALENDAR</h3>
+            <a href="{{ route('about.detail', 2) }}" class="card__btn">Read More</a>
         </div>
         <!-- Card 3 -->
         <div class="card" data-card="3">
-          <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
-          <h3 class="card__title"><i class="fas fa-briefcase"></i> CAREER</h3>
-          <button class="card__btn" data-btn="3">Read More</button>
+            <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
+            <h3 class="card__title"><i class="fas fa-briefcase"></i> CAREER</h3>
+            <a href="{{ route('about.detail', 3) }}" class="card__btn">Read More</a>
         </div>
-      </div>
     </div>
+</div>
   </div>
 </section>
 
