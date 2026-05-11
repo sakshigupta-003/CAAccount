@@ -1,0 +1,566 @@
+/* navbar */
+/* =========================
+   PROFESSIONAL NAVBAR
+========================= */
+
+.custom-navbar {
+    width: 100%;
+    padding: 14px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    z-index: 999;
+    transition: 0.3s;
+   border-bottom: 1px solid white;
+}
+
+.custom-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.navbar-logo{
+    text-decoration: none;
+}
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    
+}
+.navbar-logo h6 {
+  display: inline-flex;
+margin-top: 10px;
+    color: #fff;
+}
+
+/* MENU */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+/* RIGHT SIDE */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn {
+    text-decoration: none;
+  background: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.mobile-toggle {
+    display: none;
+    border: none;
+ background:transparent;
+ border: 2px solid #fff;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 991px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .support-btn {
+        display: none;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .navbar-logo img {
+        height: 50px;
+    }
+
+}
+/* MOBILE SIDEBAR */
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 99999;
+    padding: 80px 30px;
+    transition: 0.4s ease;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+/* CLOSE BUTTON */
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: rgb(19, 137, 201);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ========== MOBILE LINKS STYLES ========== */
+.mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-links li {
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-links li a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: #0f172a;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  background: transparent;
+  letter-spacing: -0.2px;
+}
+
+/* Hover effect — smooth background & slight translation */
+.mobile-links li a:hover {
+  background: rgba(19, 110, 201, 0.08);
+  color: #0f3b5c;
+  padding-left: 1.25rem;
+  transform: translateX(4px);
+}
+
+/* Active / tapped state (mobile feedback) */
+.mobile-links li a:active {
+  background: rgba(19, 110, 201, 0.15);
+  transform: scale(0.98);
+}
+
+/* ========== BUTTONS (Support + Contact Us) ========== */
+/* Both buttons inside .mobile-links but not list items — style them similarly */
+.mobile-links .support-btn,
+.mobile-links .contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 48px;
+  transition: all 0.25s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Support button (outline style with icon) */
+.mobile-links .support-btn {
+  background: transparent;
+  border: 1.5px solid rgba(19, 110, 201, 0.5);
+  color: #136ec9;
+  backdrop-filter: blur(2px);
+}
+
+.mobile-links .support-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.mobile-links .support-btn:hover {
+  background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    color: #fff;
+  border-color: #136ec9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(19, 110, 201, 0.15);
+}
+
+.mobile-links .support-btn:hover i {
+  transform: scale(1.05);
+}
+
+/* Contact button (solid gradient, modern) */
+.mobile-links .contact-btn {
+ background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 8px 18px rgba(19, 110, 201, 0.25);
+}
+
+.mobile-links .contact-btn:hover {
+  background: linear-gradient(105deg, #1a7bdf 0%, #0e5596 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(19, 110, 201, 0.35);
+}
+
+.mobile-links .contact-btn:active {
+  transform: translateY(1px);
+}
+
+/* Separate the buttons with a subtle divider (optional) */
+.mobile-links .support-btn {
+  margin-bottom: 0.75rem;
+}
+
+/* ========== ADDITIONAL TOUCHES ========== */
+/* Divider line before buttons (clean separation) */
+.mobile-links {
+  position: relative;
+}
+
+.mobile-links::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 1.2rem 0 1rem 0;
+  width: 100%;
+}
+
+/* Hide the divider if there’s no button? It’s fine; it adds structure */
+/* For better UX, ensure the sidebar has a close button (not required but recommended) */
+/* Remove default focus outline and replace with custom */
+.mobile-links li a:focus-visible,
+.mobile-links .support-btn:focus-visible,
+.mobile-links .contact-btn:focus-visible {
+  outline: 3px solid #ffb347;
+  outline-offset: 2px;
+  border-radius: 16px;
+}
+
+/* Scrollbar styling (in case content overflows) */
+.mobile-sidebar::-webkit-scrollbar,
+.sidebar-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-track,
+.sidebar-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb,
+.sidebar-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Responsive: smaller padding on very narrow devices */
+@media (max-width: 480px) {
+  .mobile-sidebar,
+  .sidebar-container {
+    width: 80%;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .mobile-links li a {
+    font-size: 1rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .mobile-links .support-btn,
+  .mobile-links .contact-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* OVERLAY */
+
+.sidebar-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   SCROLLED NAVBAR STATE
+========================= */
+
+/* When scrolled – solid background */
+.custom-navbar.navbar-scrolled {
+    background-color: rgb(19, 137, 201) !important;  /* your desired color */
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: make text/logo slightly adjust on scroll (stay white) */
+.custom-navbar.navbar-scrolled .nav-links li a,
+.custom-navbar.navbar-scrolled .contact-btn,
+.custom-navbar.navbar-scrolled .navbar-logo h6 {
+    color: #fff;
+}
+
+/* Keep contact button border white on scroll */
+.custom-navbar.navbar-scrolled .contact-btn {
+    border-color: #fff;
+}
+
+/* Mobile toggle button on scroll */
+.custom-navbar.navbar-scrolled .mobile-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+/* =========================
+        PROFESSIONAL FOOTER
+========================= */
+
+.main-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding-top: 70px;
+    margin-top: 80px;
+}
+
+/* TOP */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* LOGO */
+
+.footer-logo {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* SOCIAL */
+/* SOCIAL ICONS */
+
+.footer-social {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-social a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* FACEBOOK */
+.footer-social a:nth-child(1) {
+    background: #1877f2;
+}
+
+/* INSTAGRAM */
+.footer-social a:nth-child(2) {
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
+}
+
+/* LINKEDIN */
+.footer-social a:nth-child(3) {
+    background: #0a66c2;
+}
+
+/* TWITTER/X */
+.footer-social a:nth-child(4) {
+    background: #000000;
+}
+
+/* WHATSAPP */
+.footer-social a:nth-child(5) {
+    background: #25d366;
+}
+
+/* HOVER EFFECT */
+
+.footer-social a:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+/* TITLES */
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+    content: '';
+    width: 45px;
+    height: 3px;
+    background: rgb(19, 137, 201);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+/* LINKS */
+
+.footer-links ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 14px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.footer-links ul li a:hover {
+   
+    padding-left: 5px;
+}
+
+/* CONTACT */
+
+.footer-contact p {
+    color: #cbd5e1;
+    margin-bottom: 18px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.footer-contact i {
+    color: rgb(19, 137, 201);
+    margin-right: 10px;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    margin-top: 60px;
+    padding: 22px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1100px) {
+
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 768px) {
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .main-footer {
+        padding-top: 50px;
+    }
+
+}
