@@ -1596,8 +1596,7 @@ background: rgb(19, 137, 201);
       opacity: 1;
       visibility: visible;
     }
-
-      /* ========================
+ /* ========================
      HERO SECTION STYLES (your existing)
   ========================= */
   .hero {
@@ -1621,8 +1620,8 @@ background: rgb(19, 137, 201);
     z-index: 0;
     filter: brightness(0.92);
   }
-
-  /* .hero__overlay {
+/* 
+  .hero__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(0, 115, 255, 0.474) 0%, rgba(215, 127, 5, 0.649) 100%);
@@ -1723,15 +1722,15 @@ background: rgb(19, 137, 201);
   }
 
   /* ========================
-     DASHBOARD POPUP (LEFT SIDE)
+     DASHBOARD POPUP (Confined to Banner - Absolute Positioning)
   ========================= */
   .open-dashboard-btn {
-    position: fixed;
-    bottom: 50px;
+    position: absolute;
+    bottom: 30px;
     left: 30px;
-   
-    background: linear-gradient(135deg, rgb(0, 115, 255) 0%, rgba(22, 80, 181, 0.99) 100%);
-        color: white;
+    z-index: 998;
+    background: linear-gradient(135deg, rgb(19, 137, 201), #0f53ab);
+    color: white;
     border: none;
     padding: 0.9rem 1.8rem;
     font-size: 0.95rem;
@@ -1751,7 +1750,7 @@ background: rgb(19, 137, 201);
   }
 
   .dashboard-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -1769,12 +1768,12 @@ background: rgb(19, 137, 201);
   }
 
   .dashboard-popup {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -480px;
     width: 480px;
     max-width: 90vw;
-    height: 100vh;
+    height: 100%;
     background: #ffffff;
     box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -1950,5 +1949,11 @@ background: rgb(19, 137, 201);
     }
     .stat-value {
       font-size: 1.4rem;
+    }
+    .open-dashboard-btn {
+      bottom: 15px;
+      left: 15px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.85rem;
     }
   }

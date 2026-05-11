@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 10000);
   })();
 
-  (function() {
+    (function() {
     const openBtn = document.getElementById('openDashboardBtn');
     const popup = document.getElementById('dashboardPopup');
     const closeBtn = document.getElementById('closeDashboardBtn');
@@ -120,75 +120,78 @@ document.addEventListener('DOMContentLoaded', function() {
       overlay.classList.remove('active');
     }
 
-    openBtn.addEventListener('click', openPopup);
-    closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', closePopup);
+    if (openBtn) openBtn.addEventListener('click', openPopup);
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (overlay) overlay.addEventListener('click', closePopup);
 
-    // ESC key closes popup
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && popup.classList.contains('active')) {
+      if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
         closePopup();
       }
     });
 
     // Initialize Charts
-    // Bar Chart - Revenue Growth
-    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-    new Chart(revenueCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-          label: 'Revenue ($)',
-          data: [42000, 48500, 53200, 61800, 72500, 89200],
-          backgroundColor: 'rgba(19, 137, 201, 0.7)',
-          borderColor: 'rgb(19, 137, 201)',
-          borderWidth: 1,
-          borderRadius: 8,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          legend: { position: 'top' },
-          tooltip: { callbacks: { label: (ctx) => `$${ctx.raw.toLocaleString()}` } }
+    const revenueChart = document.getElementById('revenueChart');
+    if (revenueChart) {
+      const revenueCtx = revenueChart.getContext('2d');
+      new Chart(revenueCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [{
+            label: 'Revenue ($)',
+            data: [42000, 48500, 53200, 61800, 72500, 89200],
+            backgroundColor: 'rgba(19, 137, 201, 0.7)',
+            borderColor: 'rgb(19, 137, 201)',
+            borderWidth: 1,
+            borderRadius: 8,
+          }]
         },
-        scales: {
-          y: { beginAtZero: true, grid: { color: '#eef2f6' }, ticks: { callback: (val) => `$${val/1000}k` } }
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: { callbacks: { label: (ctx) => `$${ctx.raw.toLocaleString()}` } }
+          },
+          scales: {
+            y: { beginAtZero: true, grid: { color: '#eef2f6' }, ticks: { callback: (val) => `$${val/1000}k` } }
+          }
         }
-      }
-    });
+      });
+    }
 
-    // Line Chart - Time Saved
-    const timeCtx = document.getElementById('timeSavedChart').getContext('2d');
-    new Chart(timeCtx, {
-      type: 'line',
-      data: {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-          label: 'Hours Saved',
-          data: [14, 18, 22, 26],
-          borderColor: 'rgb(19, 137, 201)',
-          backgroundColor: 'rgba(19, 137, 201, 0.1)',
-          borderWidth: 3,
-          fill: true,
-          tension: 0.3,
-          pointBackgroundColor: 'rgb(19, 137, 201)',
-          pointRadius: 5,
-          pointHoverRadius: 7
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          legend: { position: 'top' },
-          tooltip: { callbacks: { label: (ctx) => `${ctx.raw} hours` } }
+    const timeChart = document.getElementById('timeSavedChart');
+    if (timeChart) {
+      const timeCtx = timeChart.getContext('2d');
+      new Chart(timeCtx, {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [{
+            label: 'Hours Saved',
+            data: [14, 18, 22, 26],
+            borderColor: 'rgb(19, 137, 201)',
+            backgroundColor: 'rgba(19, 137, 201, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.3,
+            pointBackgroundColor: 'rgb(19, 137, 201)',
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
         },
-        scales: {
-          y: { beginAtZero: true, grid: { color: '#eef2f6' }, title: { display: true, text: 'Hours Saved' } }
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: { callbacks: { label: (ctx) => `${ctx.raw} hours` } }
+          },
+          scales: {
+            y: { beginAtZero: true, grid: { color: '#eef2f6' }, title: { display: true, text: 'Hours Saved' } }
+          }
         }
-      }
-    });
+      });
+    }
   })();

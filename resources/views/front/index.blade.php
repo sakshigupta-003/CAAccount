@@ -9,7 +9,7 @@
 @endpush
 @section('content')
 <!-- ========================
-     HERO SECTION
+     HERO SECTION WITH POPUP (Banner Only)
 ========================= -->
 <section class="hero" aria-label="Hero section with financial solutions">
   <img 
@@ -27,86 +27,87 @@
       <a href="#" class="hero__btn" aria-label="Get started with Accountech">Get Started</a>
     </div>
   </div>
+
+  <!-- Dashboard Button (inside hero, positioned absolute) -->
+  <button class="open-dashboard-btn" id="openDashboardBtn">
+    <i class="fas fa-chart-line"></i> Open Financial Dashboard
+  </button>
+
+  <!-- Overlay (inside hero) -->
+  <div class="dashboard-overlay" id="dashboardOverlay"></div>
+
+  <!-- Dashboard Popup (inside hero, positioned absolute) -->
+  <div class="dashboard-popup" id="dashboardPopup">
+    <div class="popup-header">
+      <div>
+        <h2><i class="fas fa-chart-pie"></i> Financial Dashboard</h2>
+        <p>Real-time insights</p>
+      </div>
+      <button class="close-dashboard" id="closeDashboardBtn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="dashboard-content">
+      <!-- Stats Row 1 -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Businesses of</div>
+          <div class="stat-value">1,247 <span class="stat-unit">+</span></div>
+          <div class="stat-trend"><i class="fas fa-arrow-up"></i> +12% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Revenue Growth</div>
+          <div class="stat-value">+127<span class="stat-unit">%</span></div>
+          <div class="stat-trend"><i class="fas fa-chart-line"></i> Year over Year</div>
+        </div>
+      </div>
+
+      <!-- Stats Row 2 -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Time Saved</div>
+          <div class="stat-value">80<span class="stat-unit"> hrs</span></div>
+          <div class="stat-trend"><i class="fas fa-clock"></i> Monthly average</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Clients</div>
+          <div class="stat-value">892</div>
+          <div class="stat-trend"><i class="fas fa-users"></i> +23 this week</div>
+        </div>
+      </div>
+
+      <!-- Bar Chart -->
+      <div class="chart-container">
+        <div class="chart-title">
+          <i class="fas fa-chart-column" style="color: rgb(19, 137, 201);"></i> 
+          Revenue Performance (Last 6 Months)
+        </div>
+        <canvas id="revenueChart" width="400" height="180"></canvas>
+      </div>
+
+      <!-- Line Chart -->
+      <div class="chart-container">
+        <div class="chart-title">
+          <i class="fas fa-chart-line" style="color: rgb(19, 137, 201);"></i> 
+          Time Saved Trend
+        </div>
+        <canvas id="timeSavedChart" width="400" height="180"></canvas>
+      </div>
+
+      <!-- Security Badge -->
+      <div class="security-badge">
+        <i class="fas fa-shield-alt"></i>
+        <div>
+          <h4>Secure Bank-Level Encryption</h4>
+          <p>Your financial data is protected with 256-bit SSL encryption</p>
+        </div>
+        <i class="fas fa-lock" style="margin-left: auto; font-size: 1.5rem; color: #10b981;"></i>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Dashboard Button -->
-<button class="open-dashboard-btn" id="openDashboardBtn">
-  <i class="fas fa-chart-line"></i> Open Financial Dashboard
-</button>
-
-<!-- Overlay -->
-<div class="dashboard-overlay" id="dashboardOverlay"></div>
-
-<!-- Dashboard Popup (Left Side) -->
-<div class="dashboard-popup" id="dashboardPopup">
-  <div class="popup-header">
-    <div>
-      <h2><i class="fas fa-chart-pie"></i> Financial Dashboard</h2>
-      <p>Real-time insights</p>
-    </div>
-    <button class="close-dashboard" id="closeDashboardBtn">
-      <i class="fas fa-times"></i>
-    </button>
-  </div>
-
-  <div class="dashboard-content">
-    <!-- Stats Row 1 -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-label">Businesses of</div>
-        <div class="stat-value">1,247 <span class="stat-unit">+</span></div>
-        <div class="stat-trend"><i class="fas fa-arrow-up"></i> +12% this month</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Revenue Growth</div>
-        <div class="stat-value">+127<span class="stat-unit">%</span></div>
-        <div class="stat-trend"><i class="fas fa-chart-line"></i> Year over Year</div>
-      </div>
-    </div>
-
-    <!-- Stats Row 2 -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-label">Time Saved</div>
-        <div class="stat-value">80<span class="stat-unit"> hrs</span></div>
-        <div class="stat-trend"><i class="fas fa-clock"></i> Monthly average</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Active Clients</div>
-        <div class="stat-value">892</div>
-        <div class="stat-trend"><i class="fas fa-users"></i> +23 this week</div>
-      </div>
-    </div>
-
-    <!-- Bar Chart -->
-    <div class="chart-container">
-      <div class="chart-title">
-        <i class="fas fa-chart-column" style="color: rgb(19, 137, 201);"></i> 
-        Revenue Performance (Last 6 Months)
-      </div>
-      <canvas id="revenueChart" width="400" height="180"></canvas>
-    </div>
-
-    <!-- Line Chart -->
-    <div class="chart-container">
-      <div class="chart-title">
-        <i class="fas fa-chart-line" style="color: rgb(19, 137, 201);"></i> 
-        Time Saved Trend
-      </div>
-      <canvas id="timeSavedChart" width="400" height="180"></canvas>
-    </div>
-
-    <!-- Security Badge -->
-    <div class="security-badge">
-      <i class="fas fa-shield-alt"></i>
-      <div>
-        <h4>Secure Bank-Level Encryption</h4>
-        <p>Your financial data is protected with 256-bit SSL encryption</p>
-      </div>
-      <i class="fas fa-lock" style="margin-left: auto; font-size: 1.5rem; color: #10b981;"></i>
-    </div>
-  </div>
-</div>
 
 <!-- Chat Popup Widget -->
 <div class="chat-widget">
