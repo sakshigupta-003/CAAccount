@@ -164,11 +164,11 @@
           <h4>Our Services</h4>
 
           <ul>
-            <li><a href="{{ URL::to('/gst') }}">GST Filing</a></li>
-            <li><a href="{{ URL::to('/income') }}">Income Tax</a></li>
-            <li><a href="{{ URL::to('/company') }}">Company Registration</a></li>
-            <li><a href="{{ URL::to('/accounting') }}">Accounting Solutions</a></li>
-            <li><a href="{{ URL::to('/consultancy') }}">Business Consultancy</a></li>
+            <li><a href="{{ route('service.detail', 5) }}">GST Filing</a></li>
+            <li><a href="{{ route('service.detail', 2) }}">Income Tax</a></li>
+            <li><a href="{{ route('service.detail', 6) }}">Company Registration</a></li>
+            <li><a href="{{ route('service.detail', 1) }}">Audit Services</a></li>
+            <li><a href="{{ route('service.detail', 4) }}">Business Consultancy</a></li>
           </ul>
 
         </div>
