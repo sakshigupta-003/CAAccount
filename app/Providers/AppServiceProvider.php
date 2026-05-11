@@ -3,6 +3,7 @@
 namespace App\Providers;
 use App\Models\Service;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,9 +23,15 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-  public function boot(): void
-    {
-        $services = Service::where('status', 'active')->orderBy('name')->get();
+ public function boot(): void
+{
+    if (Schema::hasTable('services')) {
+
+        $services = Service::where('status', 'active')
+                    ->orderBy('name')
+                    ->get();
+
         View::share('services', $services);
     }
+}
 }

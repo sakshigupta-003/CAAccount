@@ -1,230 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets-front/img-main.png') }}">
-    @stack('styles')
-    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@yield('title')</title>
+  <link rel="icon" type="image/png" href="{{ asset('assets-front/img-main.png') }}">
+  @stack('styles')
+  <link rel="stylesheet" href="{{ asset('front_assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('front_assets/css/common.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="{{ asset('resources/css/common.css') }}">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=Glory:ital,wght@0,100..800;1,100..800&family=Marcellus&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=Glory:ital,wght@0,100..800;1,100..800&family=Marcellus&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-<!-- navbar -->
- <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-color fixed-top">
-  <div class="container position-relative">
+  <!-- PROFESSIONAL NAVBAR -->
+  <nav class="custom-navbar fixed-top">
 
-    <a class="navbar-brand" href="{{URL::to('https://skorasoft.com')}}">
-      <img src="{{ asset('resources/images/logo-skora.png') }}" alt="skorasoft">
-    </a>
-<button><i class="fa-regular fa-headphones"></i>Support</button>
-    <button><i class="fa-regular fa-address-book"></i> Contact Us</button>
+    <div class="container">
 
+      <!-- LOGO -->
+      <a class="navbar-logo" href="{{ URL::to('/') }}">
+        <img src="{{ asset('front_assets/images/logo1.png') }}" alt="Accountech">
+          <h6>CCOUNTECH</h6>
+      </a>
 
-    <!-- Menu Button -->
-    <button class="sidebar-float-btn"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#sideNav">
-      <i class="fa-solid fa-bars"></i>
+      <!-- DESKTOP MENU -->
+      <ul class="nav-links">
+        <li><a href="{{ URL::to('/') }}">Home</a></li>
+        <li><a href="{{ URL::to('/about') }}">About</a></li>
+        <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
+        <li><a href="{{ URL::to('/services') }}">Services</a></li>
+      </ul>
+
+      <!-- RIGHT BUTTONS -->
+      <div class="nav-right">
+        <a href="{{ URL::to('/contact') }}" class="contact-btn">
+          Contact Us
+        </a>
+
+        <!-- MOBILE TOGGLE -->
+        <button class="mobile-toggle" id="menuOpenBtn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- MOBILE SIDEBAR -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+
+    <!-- CLOSE BUTTON -->
+    <button class="close-sidebar" id="menuCloseBtn">
+      <i class="fa-solid fa-xmark"></i>
     </button>
 
-  </div>
-</nav>
+    <!-- MOBILE LINKS -->
+    <ul class="mobile-links">
 
+      <li><a href="{{ URL::to('/') }}">Home</a></li>
 
-<!-- RIGHT SIDE NAV -->
-<div class="offcanvas offcanvas-end custom-sidenav" id="sideNav">
+      <li><a href="{{ URL::to('/about') }}">About</a></li>
 
-  <div class="offcanvas-header">
-    <img src="{{ asset('resources/images/logo-skora.png') }}" alt="skorasoft">
-    <button class="btn-close btn-close-black"
-      data-bs-dismiss="offcanvas"></button>
-  </div>
+      <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
 
-  <h5 class="menu-title">Explore SkoraSoft</h5>
-<hr>
-  <div class="offcanvas-body">
+      <li><a href="{{ URL::to('/services') }}">Services</a></li>
 
-    <ul class="side-links">
-      <li><a href="{{URL::to('/')}}"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="{{URL::to('/company')}}"><i class="fa-solid fa-building"></i> Company</a></li>
-      <li><a href="{{URL::to('/services')}}"><i class="fa-solid fa-gears"></i> Services</a></li>
-      <li><a href="{{URL::to('/news&blogs')}}"><i class="fa-solid fa-newspaper"></i> News & Blogs</a></li>
-      <li><a href="{{URL::to('/career')}}"><i class="fa-solid fa-briefcase"></i> Career</a></li>
-      <li><a href="{{URL::to('/specialization')}}"><i class="fa-solid fa-user"></i> Specialization</a></li>
-      <li><a href="{{URL::to('/contact')}}"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <!-- buttons -->
+      <a href="{{ URL::to('/contact') }}" class="support-btn">
+        <i class="fa-solid fa-headset"></i>
+        Support
+      </a>
+
+      <a href="{{ URL::to('/contact') }}" class="contact-btn">
+        Contact Us
+      </a>
+
     </ul>
+    <div class="footer-social">
 
-    <div class="social-box">
-      <h6>Let's Connect</h6>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-      <div class="social-icons">
-        <a href="{{URL::to('https://www.linkedin.com')}}"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="{{URL::to('https://www.instagram.com')}}"><i class="fa-brands fa-instagram"></i></a>
-        <a href="{{URL::to('https://www.facebook.com')}}"><i class="fa-brands fa-facebook"></i></a>
-        <a href="{{URL::to('https://www.twitter.com')}}"><i class="fa-brands fa-twitter"></i></a>
-        <a href="{{URL::to('https://www.whatsapp.com')}}"><i class="fa-brands fa-whatsapp"></i></a>
-      </div>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+      <a href="#"><i class="fab fa-twitter"></i></a>
+
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+
     </div>
 
   </div>
-</div>
 
+  <!-- OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
+  <!-- main content -->
+  @yield('content')
 
-<!-- WhatsApp Floating Button -->
-<div class="whatsapp-container">
+  <!-- =========================
+        PROFESSIONAL FOOTER
+========================= -->
 
-  <!-- Popup Message -->
-  <div class="whatsapp-popup" id="whatsappPopup">
-    <p>👋 Hi! Need help?<br>Chat with us on WhatsApp.</p>
-    <a href="{{URL::to('https://www.whatsapp.com')}}" target="_blank">
-      Chat Now
-    </a>
-  </div>
+  <footer class="main-footer">
 
-  <!-- WhatsApp Button -->
-  <button class="whatsapp-btn" id="whatsappBtn">
-    <i class="fa-brands fa-whatsapp"></i>
-  </button>
+    <div class="container">
 
+      <div class="footer-top">
 
-  <!-- SOCIAL FLOATING POPUP -->
-<div class="social-widget">
+        <!-- FOOTER LOGO -->
+        <div class="footer-about">
 
-  <!-- MAIN BUTTON -->
-  <div class="social-toggle" onclick="toggleSocial()">
-    <i class="fas fa-share-alt"></i>
-  </div>
-
-  <!-- SOCIAL ICONS -->
-
-  <a href="{{URL::to('https://www.instagram.com')}}" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-  <a href="{{URL::to('https://www.facebook.com')}}" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="{{URL::to('https://www.twitter.com')}}" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-  <a href="{{URL::to('https://www.pinterest.com')}}" class="social-icon pinterest"><i class="fab fa-pinterest-p"></i></a>
-  <a href="{{URL::to('https://www.linkedin.com')}}" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-
-</div>
-</div>
-<!-- Cursor Glow -->
-<div class="cursor-glow"></div>
-<!-- main content -->
-    @yield('content')
-
-
-    <!-- footer -->
-     <footer class="agency-footer">
-
-  <div class="footer-wrapper">
-
-<!-- footer top center -->
-
-<div class="footertop">
-  <p>Work With Us
-
-</p>
-<h4>We would love to hear more about your project</h4>
-
-      <a href="#" class="footer-btn">
-       Get In Touch
+      <a class="navbar-logo" href="{{ URL::to('/') }}">
+        <img src="{{ asset('front_assets/images/logo1.png') }}" alt="Accountech">
+          <h6>CCOUNTECH</h6>
       </a>
-</div>
+          <p>
+            Accountech is a professional accounting and training platform
+            providing expert CA services, finance solutions, taxation,
+            and industry-ready courses for students and businesses.
+          </p>
 
-    <!-- LEFT SIDE -->
-    <div class="footer-left">
-      <p class="small-text">Ready To Do This?</p>
+          <div class="footer-social">
 
-      <h1 class="coffee-title">
-        Let's Have a <br> Coffee
-      </h1>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-      <a href="#" class="footer-btn">
-        Schedule An Appointment →
-      </a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
 
-      <div class="contact-info">
-        <p>OR</p>
-        <p>Call Us: +91 7033313450</p>
-        <p>Email Us: info@skorasoft.com</p>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+          </div>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+
+          <h4>Quick Links</h4>
+
+          <ul>
+            <li><a href="{{ URL::to('/') }}">Home</a></li>
+            <li><a href="{{ URL::to('/about') }}">About Us</a></li>
+            <li><a href="{{ URL::to('/services') }}">Services</a></li>
+            <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
+            <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
+          </ul>
+
+        </div>
+
+        <!-- SERVICES -->
+        <div class="footer-links">
+
+          <h4>Our Services</h4>
+
+          <ul>
+            <li><a href="{{ URL::to('/gst') }}">GST Filing</a></li>
+            <li><a href="{{ URL::to('/income') }}">Income Tax</a></li>
+            <li><a href="{{ URL::to('/company') }}">Company Registration</a></li>
+            <li><a href="{{ URL::to('/accounting') }}">Accounting Solutions</a></li>
+            <li><a href="{{ URL::to('/consultancy') }}">Business Consultancy</a></li>
+          </ul>
+
+        </div>
+
+        <!-- COURSES -->
+        <div class="footer-links">
+
+          <h4>Courses</h4>
+
+          <ul>
+            <li><a href="{{ URL::to('/tally') }}">Tally Prime</a></li>
+            <li><a href="{{ URL::to('/gst-course') }}">GST Course</a></li>
+            <li><a href="{{ URL::to('/excel') }}">Advanced Excel</a></li>
+            <li><a href="{{ URL::to('/accounting-training') }}">Accounting Training</a></li>
+            <li><a href="{{ URL::to('/taxation') }}">Taxation Course</a></li>
+          </ul>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+
+          <h4>Contact Info</h4>
+
+          <p>
+            <i class="fas fa-phone-alt"></i>
+            +91 7033313450
+          </p>
+
+          <p>
+            <i class="fas fa-envelope"></i>
+            info@accountech.com
+          </p>
+
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            Prayagraj, Uttar Pradesh, India
+          </p>
+
+        </div>
+
       </div>
+
     </div>
 
-    <!-- CENTER LINKS -->
-    <div class="footer-links-area">
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
 
-      <div class="footer-col">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Career</a>
-        <a href="#">Blogs</a>
-        <a href="#">Contact</a>
-      </div>
+      <div class="container">
 
-      <div class="footer-col">
-        <a href="#">Company Profile</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Condition</a>
-        <a href="#">Refund Policy</a>
-        <a href="#">Pricing</a>
+        <p>
+          © 2026 Accountech. All Rights Reserved.
+        </p>
+
       </div>
 
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="footer-right">
+  </footer>
 
-      <div class="vertical-text">Let's Talk</div>
-<div class="social-s">
-
-  <a href="#" class="s-item s1">
-    <i class="fab fa-instagram"></i>
-  </a>
-
-  <a href="#" class="s-item s2">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-
-  <a href="#" class="s-item s3">
-    <i class="fab fa-pinterest-p"></i>
-  </a>
-
-  <a href="#" class="s-item s4">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-
-  <a href="#" class="s-item s5">
-    <i class="fab fa-twitter"></i>
-  </a>
-
-  <a href="#" class="s-item s6">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-</div>
-
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © Copyright 2026 SkoraSoft. All rights reserved.
-  </div>
-
-</footer>
-
-    <script src="{{ asset('resources/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('resources/js/common.js') }}"></script>
-    @stack('scripts')
+  <script src="{{ asset('front_assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('front_assets/js/common.js') }}"></script>
+  @stack('scripts')
 
 </body>
 
