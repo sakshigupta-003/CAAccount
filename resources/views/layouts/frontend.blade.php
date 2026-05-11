@@ -33,16 +33,16 @@
 
       <!-- DESKTOP MENU -->
       <ul class="nav-links">
-        <li><a href="{{ URL::to('/') }}">Home</a></li>
-        <li><a href="{{ URL::to('/about') }}">About</a></li>
-        <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
-        <li><a href="{{ URL::to('/services') }}">Services</a></li>
+        <li><a href="{{ URL::to('/') }}"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="{{ URL::to('/about') }}"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="{{ URL::to('/courses') }}"><i class="fa-solid fa-graduation-cap"></i> Courses</a></li>
+        <li><a href="{{ URL::to('/services') }}"> <i class="fa-solid fa-bag-shopping"></i> Services</a></li>
       </ul>
 
       <!-- RIGHT BUTTONS -->
       <div class="nav-right">
         <a href="{{ URL::to('/contact') }}" class="contact-btn">
-          Contact Us
+        <i class="fa-solid fa-phone"></i>  Contact Us
         </a>
 
         <!-- MOBILE TOGGLE -->
