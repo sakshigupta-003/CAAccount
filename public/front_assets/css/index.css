@@ -1127,10 +1127,10 @@ background: rgb(19, 137, 201);
       min-height: 50vh;
     }
     .back-btn {
-      top: 20px;
-      left: 20px;
+      top: 85px;
+      left: 5px;
       font-size: 0.85rem;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 1rem;
     }
     .about-header {
       padding: 1.5rem;
@@ -1596,8 +1596,8 @@ background: rgb(19, 137, 201);
       opacity: 1;
       visibility: visible;
     }
- /* ========================
-     HERO SECTION STYLES (your existing)
+   /* ========================
+     HERO SECTION STYLES
   ========================= */
   .hero {
     position: relative;
@@ -1620,8 +1620,8 @@ background: rgb(19, 137, 201);
     z-index: 0;
     filter: brightness(0.92);
   }
-/* 
-  .hero__overlay {
+
+  /* .hero__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(0, 115, 255, 0.474) 0%, rgba(215, 127, 5, 0.649) 100%);
@@ -1722,13 +1722,13 @@ background: rgb(19, 137, 201);
   }
 
   /* ========================
-     DASHBOARD POPUP (Confined to Banner - Absolute Positioning)
+     DASHBOARD POPUP (Fixed - No Overlay Overlap)
   ========================= */
   .open-dashboard-btn {
     position: absolute;
     bottom: 30px;
     left: 30px;
-    z-index: 998;
+    z-index: 100;
     background: linear-gradient(135deg, rgb(19, 137, 201), #0f53ab);
     color: white;
     border: none;
@@ -1749,37 +1749,33 @@ background: rgb(19, 137, 201);
     box-shadow: 0 12px 22px rgba(19, 137, 201, 0.4);
   }
 
-  .dashboard-overlay {
-    position: absolute;
+  /* Removed separate overlay - using a pseudo-element instead to avoid overlap issues */
+  .dashboard-popup {
+    position: fixed;
+    top: 0;
+    left: -480px;
+    width: 480px;
+    max-width: 90vw;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Backdrop overlay when popup is open */
+  body.popup-open::before {
+    content: '';
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .dashboard-overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dashboard-popup {
-    position: absolute;
-    top: 0;
-    left: -480px;
-    width: 480px;
-    max-width: 90vw;
-    height: 100%;
-    background: #ffffff;
-    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    overflow-y: auto;
-    overflow-x: hidden;
+    z-index: 9999;
+    pointer-events: auto;
   }
 
   .dashboard-popup.active {
@@ -1819,6 +1815,9 @@ background: rgb(19, 137, 201);
     cursor: pointer;
     font-size: 1.1rem;
     transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .close-dashboard:hover {
