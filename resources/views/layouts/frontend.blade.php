@@ -27,8 +27,8 @@
 
       <!-- LOGO -->
       <a class="navbar-logo" href="{{ URL::to('/') }}">
-        <img src="{{ asset('front_assets/images/logo1.png') }}" alt="Accountech">
-          <h6>CCOUNTECH</h6>
+        <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
+        
       </a>
 
       <!-- DESKTOP MENU -->
@@ -122,8 +122,8 @@
         <div class="footer-about">
 
       <a class="navbar-logo" href="{{ URL::to('/') }}">
-        <img src="{{ asset('front_assets/images/logo1.png') }}" alt="Accountech">
-          <h6>CCOUNTECH</h6>
+        <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
+         
       </a>
           <p>
             Accountech is a professional accounting and training platform

@@ -104,31 +104,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 10000);
   })();
 
-    (function() {
+  (function() {
     const openBtn = document.getElementById('openDashboardBtn');
     const popup = document.getElementById('dashboardPopup');
     const closeBtn = document.getElementById('closeDashboardBtn');
-    const overlay = document.getElementById('dashboardOverlay');
 
     function openPopup() {
       popup.classList.add('active');
-      overlay.classList.add('active');
+      document.body.classList.add('popup-open');
     }
 
     function closePopup() {
       popup.classList.remove('active');
-      overlay.classList.remove('active');
+      document.body.classList.remove('popup-open');
     }
 
-    if (openBtn) openBtn.addEventListener('click', openPopup);
-    if (closeBtn) closeBtn.addEventListener('click', closePopup);
-    if (overlay) overlay.addEventListener('click', closePopup);
+    // Open button
+    if (openBtn) {
+      openBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openPopup();
+      });
+    }
 
-    document.addEventListener('keydown', (e) => {
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closePopup();
+      });
+    }
+
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
         closePopup();
       }
     });
+
+    // Close when clicking outside (on body backdrop)
+    document.body.addEventListener('click', function(e) {
+      if (popup && popup.classList.contains('active')) {
+        // Check if click is outside the popup
+        if (!popup.contains(e.target) && e.target !== openBtn) {
+          closePopup();
+        }
+      }
+    });
+
+    // Prevent popup close when clicking inside popup
+    if (popup) {
+      popup.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
 
     // Initialize Charts
     const revenueChart = document.getElementById('revenueChart');

@@ -33,9 +33,6 @@
     <i class="fas fa-chart-line"></i> Open Financial Dashboard
   </button>
 
-  <!-- Overlay (inside hero) -->
-  <div class="dashboard-overlay" id="dashboardOverlay"></div>
-
   <!-- Dashboard Popup (inside hero, positioned absolute) -->
   <div class="dashboard-popup" id="dashboardPopup">
     <div class="popup-header">
