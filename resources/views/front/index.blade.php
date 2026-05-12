@@ -10,8 +10,8 @@
 @endpush
 @section('content')
     <!-- ========================
-                     HERO SECTION WITH AUTOMATIC SLIDER
-                ========================= -->
+                             HERO SECTION WITH AUTOMATIC SLIDER
+                        ========================= -->
     <section class="hero" aria-label="Hero section with financial solutions">
 
         <!-- Slider Container -->
@@ -38,7 +38,7 @@
             <div class="hero__content">
                 <h1 class="hero__title">Unlock Your Financial Potential with Accountech</h1>
                 <p class="hero__subtitle">Empowering Your Financial Journey with Expert Accounting Solutions</p>
-                <a href="#" class="hero__btn" aria-label="Get started with Accountech">Get Started</a>
+                <a href="{{ route('contact') }}" class="hero__btn" aria-label="Get started with Accountech">Get Started</a>
             </div>
         </div>
 
@@ -57,144 +57,11 @@
             <span class="dot" data-slide="2"></span>
         </div>
 
-        <!-- Dashboard Button -->
-        <button class="open-dashboard-btn" id="openDashboardBtn">
-            <i class="fas fa-chart-line"></i> Open Financial Dashboard
-        </button>
-
-        <!-- Dashboard Popup -->
-        <div class="dashboard-popup" id="dashboardPopup">
-            <div class="popup-header">
-                <div>
-                    <h2><i class="fas fa-chart-pie"></i> Financial Dashboard</h2>
-                    <p>Real-time insights</p>
-                </div>
-                <button class="close-dashboard" id="closeDashboardBtn">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="dashboard-content">
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-label">Businesses of</div>
-                        <div class="stat-value">1,247 <span class="stat-unit">+</span></div>
-                        <div class="stat-trend"><i class="fas fa-arrow-up"></i> +12% this month</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Revenue Growth</div>
-                        <div class="stat-value">+127<span class="stat-unit">%</span></div>
-                        <div class="stat-trend"><i class="fas fa-chart-line"></i> Year over Year</div>
-                    </div>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-label">Time Saved</div>
-                        <div class="stat-value">80<span class="stat-unit"> hrs</span></div>
-                        <div class="stat-trend"><i class="fas fa-clock"></i> Monthly average</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Active Clients</div>
-                        <div class="stat-value">892</div>
-                        <div class="stat-trend"><i class="fas fa-users"></i> +23 this week</div>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <div class="chart-title">
-                        <i class="fas fa-chart-column" style="color: rgb(19, 137, 201);"></i>
-                        Revenue Performance (Last 6 Months)
-                    </div>
-                    <canvas id="revenueChart" width="400" height="180"></canvas>
-                </div>
-                <div class="chart-container">
-                    <div class="chart-title">
-                        <i class="fas fa-chart-line" style="color: rgb(19, 137, 201);"></i>
-                        Time Saved Trend
-                    </div>
-                    <canvas id="timeSavedChart" width="400" height="180"></canvas>
-                </div>
-                <div class="security-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <div>
-                        <h4>Secure Bank-Level Encryption</h4>
-                        <p>Your financial data is protected with 256-bit SSL encryption</p>
-                    </div>
-                    <i class="fas fa-lock" style="margin-left: auto; font-size: 1.5rem; color: #10b981;"></i>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Chat Popup Widget -->
-    <div class="chat-widget">
-        <button class="chat-toggle-btn" id="chatToggleBtn">
-            <i class="fas fa-comment-dots"></i>
-            <span class="unread-badge" id="unreadBadge" style="display: none;">0</span>
-        </button>
-
-        <div class="popup-container" id="popupContainer">
-            <div class="popup-header">
-                <h3><i class="fas fa-headset"></i> Support Chat</h3>
-                <button class="close-popup" id="closePopupBtn"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="messages-area" id="messagesArea">
-                <!-- Message 1: Incoming from Mart's Malt Shop (unread) -->
-                <div class="popupcard incoming unread" data-msg-id="1">
-                    <div class="message-sender">
-                        <span class="avatar-icon"><i class="fas fa-store"></i></span>
-                        Mart's Malt Shop
-                    </div>
-                    <div class="message-bubble">
-                        Can you provide an update on my tax return?
-                    </div>
-                    <div class="timestamp">Just now</div>
-                </div>
-
-                <!-- Message 2: Outgoing reply from Steve (read by default - we sent it) -->
-                <div class="popupcard outgoing" data-msg-id="2">
-                    <div class="message-sender">
-                        <span class="avatar-icon"><i class="fas fa-user-check"></i></span>
-                        Steve@1-54Accountech
-                    </div>
-                    <div class="message-bubble">
-                        Yes, it's ready for your review!
-                    </div>
-                    <div class="timestamp">Now</div>
-                </div>
-
-                <!-- Message 3: New incoming from another client (unread) -->
-                <div class="popupcard incoming unread" data-msg-id="3">
-                    <div class="message-sender">
-                        <span class="avatar-icon"><i class="fas fa-user"></i></span>
-                        Emily Chen
-                    </div>
-                    <div class="message-bubble">
-                        I have a question about the financial planning services you offer.
-                    </div>
-                    <div class="timestamp">2 min ago</div>
-                </div>
-
-                <!-- Message 4: Outgoing auto-reply (read) -->
-                <div class="popupcard outgoing" data-msg-id="4">
-                    <div class="message-sender">
-                        <span class="avatar-icon"><i class="fas fa-headset"></i></span>
-                        Support Agent
-                    </div>
-                    <div class="message-bubble">
-                        Sure! We offer comprehensive financial planning that includes retirement, investments, and tax
-                        optimization. How can I assist further?
-                    </div>
-                    <div class="timestamp">Just now</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
     <!-- ========================
-                     ABOUT US SECTION
-                ========================= -->
+                             ABOUT US SECTION
+                        ========================= -->
     <section class="about-us" aria-label="About Accountech">
         <div class="about-us__container">
             <!-- LEFT COLUMN (Title + Subtitle) -->
@@ -305,8 +172,8 @@
     </section>
 
     <!-- ========================
-                     OUR COURSES SECTION
-                ========================= -->
+                             OUR COURSES SECTION
+                        ========================= -->
     <section class="courses-section" aria-label="Our Courses">
         <div class="courses-container">
             <!-- Section Header (centered) -->
@@ -450,8 +317,8 @@
         </div>
     </section>
     <!-- ========================
-                     OUR SERVICES SECTION (Overlay Background Image in HTML)
-                ========================= -->
+                             OUR SERVICES SECTION (Overlay Background Image in HTML)
+                        ========================= -->
     <section class="services-section" aria-label="Our Services">
         <!-- Background Image (added directly in HTML) -->
         <img class="services-bg" src="front_assets/images/service.jpg" alt="Financial services background">
@@ -535,8 +402,8 @@
         </div>
     </section>
     <!-- ========================
-         CONTACT SECTION (Professional)
-    ========================= -->
+                 CONTACT SECTION (Professional)
+            ========================= -->
     <section class="contact-section" aria-label="Contact Us">
         <div class="contact-container-main">
             <!-- Section Header -->
