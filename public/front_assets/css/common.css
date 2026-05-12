@@ -271,9 +271,6 @@ margin-top: 10px;
 /* OPTION 1: Lift Up + Scale (Recommended) */
 .contact-btn:hover {
     transform: translateY(-3px) scale(1.02);
-    background: #fff;
-    color: rgb(19, 137, 201);
-    border-color: rgb(19, 137, 201);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -731,7 +728,6 @@ margin-top: 10px;
 
 /* Optional: make text/logo slightly adjust on scroll (stay white) */
 .custom-navbar.navbar-scrolled .nav-links li a,
-.custom-navbar.navbar-scrolled .contact-btn,
 .custom-navbar.navbar-scrolled .navbar-logo h6 {
     color: #fff;
 }
