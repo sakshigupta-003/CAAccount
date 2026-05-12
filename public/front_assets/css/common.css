@@ -899,6 +899,11 @@
     color: rgb(19, 137, 201);
     margin-right: 10px;
 }
+.footer-contact a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
 /* BOTTOM */
 

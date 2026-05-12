@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title')</title>
-  <link rel="icon" type="image/png" href="{{ asset('assets-front/img-main.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('front_assets/images/httpslogo.png') }}">
   @stack('styles')
   <link rel="stylesheet" href="{{ asset('front_assets/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('front_assets/css/common.css') }}">
@@ -196,17 +196,23 @@
 
           <p>
             <i class="fas fa-phone-alt"></i>
-            +91 9217354577
+          <a href="tel:+919217354577">+91 9217354577</a>
+          </p>
+
+           <p>
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+919876543210">+91 9876543210</a>  
           </p>
 
           <p>
             <i class="fas fa-envelope"></i>
-            info@accountech.com
+           <a href="mailto:info@accountech.com">info@accountech.com</a>
           </p>
 
           <p>
             <i class="fas fa-map-marker-alt"></i>
-            1125-26 i-thum towers-b , pilot No-A40, Sector-62, noida, Noida, Uttar Pradesh 201301
+            <a href="https://maps.google.com/?q=123+Financial+District">1125-26 i-thum towers-b , pilot No-A40, Sector-62, noida, Noida, Uttar Pradesh 201301</a>
+            
           </p>
 
         </div>
