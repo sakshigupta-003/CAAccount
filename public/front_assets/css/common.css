@@ -6,10 +6,10 @@
 .custom-navbar {
     width: 100%;
     padding: 14px 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     z-index: 999;
     transition: 0.3s;
-   border-bottom: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .custom-navbar .container {
@@ -19,17 +19,16 @@
 }
 
 /* LOGO */
-.navbar-logo{
+.navbar-logo {
     text-decoration: none;
 }
 .navbar-logo img {
     height: 50px;
     width: auto;
-    
 }
 .navbar-logo h6 {
-  display: inline-flex;
-margin-top: 10px;
+    display: inline-flex;
+    margin-top: 10px;
     color: #fff;
 }
 
@@ -70,21 +69,17 @@ margin-top: 10px;
     transform: translateY(-2px) scale(1.1);
 }
 
-
-
 .nav-links li a:hover::after {
     width: 100%;
 }
 
 /* Text color transition on hover */
 .nav-links li a:hover {
-    color: #0f172a;
     transform: translateY(-1px);
 }
 
 /* Active link styling (when on current page) */
 .nav-links li a.active {
-    color: #0f172a;
 }
 
 .nav-links li a.active::after {
@@ -114,7 +109,6 @@ margin-top: 10px;
 
 .nav-links--scale li a:hover {
     transform: scale(1.08);
-    color: #0f172a;
 }
 
 .nav-links--scale li a::after {
@@ -147,8 +141,13 @@ margin-top: 10px;
 
 /* VARIANT 5: Bounce Effect */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 .nav-links--bounce li a:hover {
@@ -157,8 +156,13 @@ margin-top: 10px;
 
 /* VARIANT 6: Pulsing Icon */
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 .nav-links--pulse li a:hover i {
@@ -180,11 +184,10 @@ margin-top: 10px;
 
 .nav-links--pro li a:hover i {
     transform: translateY(-3px) scale(1.15);
-    color: #0f172a;
 }
 
 .nav-links--pro li a::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: -100%;
@@ -203,7 +206,6 @@ margin-top: 10px;
 }
 
 .nav-links--pro li a:hover {
-    color: #0f172a;
     transform: translateY(-2px);
 }
 
@@ -215,11 +217,11 @@ margin-top: 10px;
         font-size: 14px;
         gap: 6px;
     }
-    
+
     .nav-links li a i {
         font-size: 12px;
     }
-    
+
     .nav-links li a:hover {
         transform: none; /* Disable translate on mobile for better UX */
     }
@@ -233,7 +235,6 @@ margin-top: 10px;
     outline-offset: 4px;
     border-radius: 4px;
 }
-
 
 /* RIGHT SIDE */
 
@@ -320,13 +321,18 @@ margin-top: 10px;
 }
 
 .contact-btn--shine::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
     transition: left 0.5s ease;
     z-index: -1;
 }
@@ -344,7 +350,8 @@ margin-top: 10px;
 
 /* OPTION 6: Bounce Effect */
 @keyframes bounce {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
     50% {
@@ -390,7 +397,7 @@ margin-top: 10px;
 }
 
 .contact-btn--pro::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -399,7 +406,9 @@ margin-top: 10px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition:
+        width 0.6s,
+        height 0.6s;
     z-index: -1;
 }
 
@@ -457,14 +466,13 @@ margin-top: 10px;
     border-radius: 10px;
 }
 
-
 /* MOBILE MENU BUTTON */
 
 .mobile-toggle {
     display: none;
     border: none;
- background:transparent;
- border: 2px solid #fff;
+    background: transparent;
+    border: 2px solid #fff;
     color: #fff;
     width: 45px;
     height: 45px;
@@ -474,8 +482,7 @@ margin-top: 10px;
 
 /* RESPONSIVE */
 
-@media(max-width: 991px) {
-
+@media (max-width: 991px) {
     .nav-links {
         display: none;
     }
@@ -495,9 +502,7 @@ margin-top: 10px;
     .navbar-logo img {
         height: 50px;
     }
-
 }
-
 
 .mobile-sidebar.active {
     right: 0;
@@ -521,129 +526,133 @@ margin-top: 10px;
 
 /* ========== MOBILE LINKS STYLES ========== */
 .mobile-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .mobile-links li {
-  margin: 0;
-  width: 100%;
+    margin: 0;
+    width: 100%;
 }
 
 .mobile-links li a {
-  display: block;
-  text-decoration: none;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 550;
-  color: #0f172a;
-  padding: 0.85rem 1rem;
-  border-radius: 16px;
-  transition: all 0.25s ease;
-  background: transparent;
-  letter-spacing: -0.2px;
+    display: block;
+    text-decoration: none;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    font-size: 1.2rem;
+    font-weight: 550;
+    color: #0f172a;
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    transition: all 0.25s ease;
+    background: transparent;
+    letter-spacing: -0.2px;
 }
 
 /* Hover effect — smooth background & slight translation */
 .mobile-links li a:hover {
-  background: rgba(19, 110, 201, 0.08);
-  color: #0f3b5c;
-  padding-left: 1.25rem;
-  transform: translateX(4px);
+    background: rgba(19, 110, 201, 0.08);
+    color: #0f3b5c;
+    padding-left: 1.25rem;
+    transform: translateX(4px);
 }
 
 /* Active / tapped state (mobile feedback) */
 .mobile-links li a:active {
-  background: rgba(19, 110, 201, 0.15);
-  transform: scale(0.98);
+    background: rgba(19, 110, 201, 0.15);
+    transform: scale(0.98);
 }
 
 /* ========== BUTTONS (Support + Contact Us) ========== */
 /* Both buttons inside .mobile-links but not list items — style them similarly */
 .mobile-links .support-btn,
 .mobile-links .contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-decoration: none;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.85rem 1.2rem;
-  margin-top: 1rem;
-  border-radius: 48px;
-  transition: all 0.25s ease;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1.2rem;
+    margin-top: 1rem;
+    border-radius: 48px;
+    transition: all 0.25s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Support button (outline style with icon) */
 .mobile-links .support-btn {
-  background: transparent;
-  border: 1.5px solid rgba(19, 110, 201, 0.5);
-  color: #136ec9;
-  backdrop-filter: blur(2px);
+    background: transparent;
+    border: 1.5px solid rgba(19, 110, 201, 0.5);
+    color: #136ec9;
+    backdrop-filter: blur(2px);
 }
 
 .mobile-links .support-btn i {
-  font-size: 1.1rem;
-  transition: transform 0.2s;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
 }
 
 .mobile-links .support-btn:hover {
-  background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
     color: #fff;
-  border-color: #136ec9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(19, 110, 201, 0.15);
+    border-color: #136ec9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 110, 201, 0.15);
 }
 
 .mobile-links .support-btn:hover i {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Contact button (solid gradient, modern) */
 .mobile-links .contact-btn {
- background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
-  border: none;
-  color: white;
-  box-shadow: 0 8px 18px rgba(19, 110, 201, 0.25);
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 8px 18px rgba(19, 110, 201, 0.25);
 }
 
 .mobile-links .contact-btn:hover {
-  background: linear-gradient(105deg, #1a7bdf 0%, #0e5596 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 22px rgba(19, 110, 201, 0.35);
+    background: linear-gradient(105deg, #1a7bdf 0%, #0e5596 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(19, 110, 201, 0.35);
 }
 
 .mobile-links .contact-btn:active {
-  transform: translateY(1px);
+    transform: translateY(1px);
 }
 
 /* Separate the buttons with a subtle divider (optional) */
 .mobile-links .support-btn {
-  margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 /* ========== ADDITIONAL TOUCHES ========== */
 /* Divider line before buttons (clean separation) */
 .mobile-links {
-  position: relative;
+    position: relative;
 }
 
 .mobile-links::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.06);
-  margin: 1.2rem 0 1rem 0;
-  width: 100%;
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 1.2rem 0 1rem 0;
+    width: 100%;
 }
 
 /* Hide the divider if there’s no button? It’s fine; it adds structure */
@@ -652,47 +661,47 @@ margin-top: 10px;
 .mobile-links li a:focus-visible,
 .mobile-links .support-btn:focus-visible,
 .mobile-links .contact-btn:focus-visible {
-  outline: 3px solid #ffb347;
-  outline-offset: 2px;
-  border-radius: 16px;
+    outline: 3px solid #ffb347;
+    outline-offset: 2px;
+    border-radius: 16px;
 }
 
 /* Scrollbar styling (in case content overflows) */
 .mobile-sidebar::-webkit-scrollbar,
 .sidebar-container::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .mobile-sidebar::-webkit-scrollbar-track,
 .sidebar-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
 .mobile-sidebar::-webkit-scrollbar-thumb,
 .sidebar-container::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
+    background: #cbd5e1;
+    border-radius: 10px;
 }
 
 /* Responsive: smaller padding on very narrow devices */
 @media (max-width: 480px) {
-  .mobile-sidebar,
-  .sidebar-container {
-    width: 80%;
-    padding: 1.5rem 1.2rem;
-  }
+    .mobile-sidebar,
+    .sidebar-container {
+        width: 80%;
+        padding: 1.5rem 1.2rem;
+    }
 
-  .mobile-links li a {
-    font-size: 1rem;
-    padding: 0.75rem 0.9rem;
-  }
+    .mobile-links li a {
+        font-size: 1rem;
+        padding: 0.75rem 0.9rem;
+    }
 
-  .mobile-links .support-btn,
-  .mobile-links .contact-btn {
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-  }
+    .mobile-links .support-btn,
+    .mobile-links .contact-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* OVERLAY */
@@ -701,7 +710,7 @@ margin-top: 10px;
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
     z-index: 9999;
@@ -721,7 +730,7 @@ margin-top: 10px;
 
 /* When scrolled – solid background */
 .custom-navbar.navbar-scrolled {
-    background-color: rgb(19, 137, 201) !important;  /* your desired color */
+    background-color: rgb(19, 137, 201) !important; /* your desired color */
     border-bottom-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -832,7 +841,7 @@ margin-top: 10px;
 
 .footer-social a:hover {
     transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 /* TITLES */
 
@@ -845,7 +854,7 @@ margin-top: 10px;
 
 .footer-links h4::after,
 .footer-contact h4::after {
-    content: '';
+    content: "";
     width: 45px;
     height: 3px;
     background: rgb(19, 137, 201);
@@ -874,7 +883,6 @@ margin-top: 10px;
 }
 
 .footer-links ul li a:hover {
-   
     padding-left: 5px;
 }
 
@@ -909,16 +917,13 @@ margin-top: 10px;
 
 /* RESPONSIVE */
 
-@media(max-width: 1100px) {
-
+@media (max-width: 1100px) {
     .footer-top {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
     .footer-top {
         grid-template-columns: 1fr;
     }
@@ -926,7 +931,6 @@ margin-top: 10px;
     .main-footer {
         padding-top: 50px;
     }
-
 }
 /* ============================================
    MOBILE SIDEBAR - CLEAN & PROFESSIONAL
@@ -1053,7 +1057,7 @@ margin-top: 10px;
     gap: 12px;
     padding: 14px 18px;
     text-decoration: none;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: #1e293b;
@@ -1064,33 +1068,33 @@ margin-top: 10px;
 }
 
 /* Menu Icons using pseudo-elements */
-.mobile-links li:nth-child(1) a::before { 
-    content: '\f015'; 
-    font-family: 'Font Awesome 6 Free'; 
-    font-weight: 600; 
-    width: 24px; 
-    color: rgb(19, 137, 201); 
+.mobile-links li:nth-child(1) a::before {
+    content: "\f015";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
 }
-.mobile-links li:nth-child(2) a::before { 
-    content: '\f007'; 
-    font-family: 'Font Awesome 6 Free'; 
-    font-weight: 600; 
-    width: 24px; 
-    color: rgb(19, 137, 201); 
+.mobile-links li:nth-child(2) a::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
 }
-.mobile-links li:nth-child(3) a::before { 
-    content: '\f19d'; 
-    font-family: 'Font Awesome 6 Free'; 
-    font-weight: 600; 
-    width: 24px; 
-    color: rgb(19, 137, 201); 
+.mobile-links li:nth-child(3) a::before {
+    content: "\f19d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
 }
-.mobile-links li:nth-child(4) a::before { 
-    content: '\f0f2'; 
-    font-family: 'Font Awesome 6 Free'; 
-    font-weight: 600; 
-    width: 24px; 
-    color: rgb(19, 137, 201); 
+.mobile-links li:nth-child(4) a::before {
+    content: "\f0f2";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
 }
 
 .mobile-links li a:hover {
@@ -1107,7 +1111,7 @@ margin-top: 10px;
 
 /* Divider line before buttons */
 .mobile-links::after {
-    content: '';
+    content: "";
     display: block;
     height: 1px;
     background: rgba(0, 0, 0, 0.06);
@@ -1133,7 +1137,7 @@ margin-top: 10px;
     justify-content: center;
     gap: 10px;
     text-decoration: none;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
     padding: 12px 20px;
@@ -1170,7 +1174,7 @@ margin-top: 10px;
     justify-content: center;
     gap: 10px;
     text-decoration: none;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
     padding: 12px 20px;
@@ -1230,7 +1234,14 @@ margin-top: 10px;
 
 /* Instagram - Real Brand Gradient */
 .mobile-sidebar .footer-social a:nth-child(2) {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
     color: white;
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(220, 39, 67, 0.3);
@@ -1307,26 +1318,26 @@ margin-top: 10px;
         left: -350px;
         padding: 30px 24px;
     }
-    
+
     .mobile-navbar-logo img {
         height: 50px;
     }
-    
+
     .logo-text {
         font-size: 1.4rem;
     }
-    
+
     .mobile-links li a {
         padding: 16px 20px;
         font-size: 1.05rem;
     }
-    
+
     .mobile-buttons .support-btn,
     .mobile-buttons .contact-btn {
         padding: 14px 20px;
         font-size: 1rem;
     }
-    
+
     .mobile-sidebar .footer-social a {
         width: 44px;
         height: 44px;
@@ -1341,7 +1352,7 @@ margin-top: 10px;
         left: -280px;
         padding: 20px 18px;
     }
-    
+
     .close-sidebar {
         top: 15px;
         right: 15px;
@@ -1349,36 +1360,36 @@ margin-top: 10px;
         height: 36px;
         font-size: 1.1rem;
     }
-    
+
     .mobile-navbar-logo img {
         height: 38px;
     }
-    
+
     .logo-text {
         font-size: 1.1rem;
     }
-    
+
     .mobile-links li a {
         padding: 12px 14px;
         font-size: 0.95rem;
     }
-    
+
     .mobile-buttons .support-btn,
     .mobile-buttons .contact-btn {
         padding: 10px 16px;
         font-size: 0.9rem;
     }
-    
+
     .mobile-sidebar .footer-social {
         gap: 12px;
     }
-    
+
     .mobile-sidebar .footer-social a {
         width: 36px;
         height: 36px;
         font-size: 0.95rem;
     }
-    
+
     .mobile-logo-wrapper {
         margin-top: 10px;
         margin-bottom: 20px;
@@ -1392,25 +1403,25 @@ margin-top: 10px;
         left: -260px;
         padding: 16px 14px;
     }
-    
+
     .logo-text {
         display: none;
     }
-    
+
     .mobile-navbar-logo img {
         height: 40px;
     }
-    
+
     .mobile-links li a {
         padding: 10px 12px;
         font-size: 0.9rem;
         gap: 10px;
     }
-    
+
     .mobile-sidebar .footer-social {
         gap: 10px;
     }
-    
+
     .mobile-sidebar .footer-social a {
         width: 34px;
         height: 34px;
@@ -1424,20 +1435,20 @@ margin-top: 10px;
         width: 380px;
         left: -380px;
     }
-    
+
     .mobile-navbar-logo img {
         height: 55px;
     }
-    
+
     .logo-text {
         font-size: 1.5rem;
     }
-    
+
     .mobile-links li a {
         padding: 18px 22px;
         font-size: 1.1rem;
     }
-    
+
     .mobile-sidebar .footer-social a {
         width: 48px;
         height: 48px;
