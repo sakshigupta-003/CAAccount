@@ -28,7 +28,7 @@
       <!-- LOGO -->
       <a class="navbar-logo" href="{{ URL::to('/') }}">
         <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
-        
+
       </a>
 
       <!-- DESKTOP MENU -->
@@ -42,7 +42,7 @@
       <!-- RIGHT BUTTONS -->
       <div class="nav-right">
         <a href="{{ URL::to('/contact') }}" class="contact-btn">
-        <i class="fa-solid fa-phone"></i>  Contact Us
+          <i class="fa-solid fa-phone"></i> Contact Us
         </a>
 
         <!-- MOBILE TOGGLE -->
@@ -56,48 +56,48 @@
 
   </nav>
 
- <!-- MOBILE SIDEBAR -->
-<div class="mobile-sidebar" id="mobileSidebar">
-  <!-- CLOSE BUTTON -->
-  <button class="close-sidebar" id="menuCloseBtn">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
+  <!-- MOBILE SIDEBAR -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <!-- CLOSE BUTTON -->
+    <button class="close-sidebar" id="menuCloseBtn">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-  <!-- LOGO -->
-  <div class="mobile-logo-wrapper">
-    <a class="mobile-navbar-logo" href="{{ URL::to('/') }}">
-      <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
-      
-    </a>
+    <!-- LOGO -->
+    <div class="mobile-logo-wrapper">
+      <a class="mobile-navbar-logo" href="{{ URL::to('/') }}">
+        <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
+
+      </a>
+    </div>
+
+    <!-- MOBILE LINKS -->
+    <ul class="mobile-links">
+      <li><a href="{{ URL::to('/') }}">Home</a></li>
+      <li><a href="{{ URL::to('/about') }}">About</a></li>
+      <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
+      <li><a href="{{ URL::to('/services') }}">Services</a></li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="mobile-buttons">
+      <a href="{{ URL::to('/contact') }}" class="support-btn">
+        <i class="fa-solid fa-headset"></i> Support
+      </a>
+      <a href="{{ URL::to('/contact') }}" class="contact-btn">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <a href="https://www.facebook.com/share/1CjKpu3mD1/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/easetoloan"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://twitter.com/EaseToLoan"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </div>
-
-  <!-- MOBILE LINKS -->
-  <ul class="mobile-links">
-    <li><a href="{{ URL::to('/') }}">Home</a></li>
-    <li><a href="{{ URL::to('/about') }}">About</a></li>
-    <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
-    <li><a href="{{ URL::to('/services') }}">Services</a></li>
-  </ul>
-
-  <!-- Buttons -->
-  <div class="mobile-buttons">
-    <a href="{{ URL::to('/contact') }}" class="support-btn">
-      <i class="fa-solid fa-headset"></i> Support
-    </a>
-    <a href="{{ URL::to('/contact') }}" class="contact-btn">
-      Contact Us
-    </a>
-  </div>
-
-  <!-- Social Icons -->
-  <div class="footer-social">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</div>
   <!-- OVERLAY -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -117,10 +117,10 @@
         <!-- FOOTER LOGO -->
         <div class="footer-about">
 
-      <a class="navbar-logo" href="{{ URL::to('/') }}">
-        <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
-         
-      </a>
+          <a class="navbar-logo" href="{{ URL::to('/') }}">
+            <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
+
+          </a>
           <p>
             Accountech is a professional accounting and training platform
             providing expert CA services, finance solutions, taxation,
@@ -129,15 +129,16 @@
 
           <div class="footer-social">
 
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/1CjKpu3mD1/"><i class="fab fa-facebook-f"></i></a>
 
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D"><i
+                class="fab fa-instagram"></i></a>
 
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/company/easetoloan"><i class="fab fa-linkedin-in"></i></a>
 
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://twitter.com/EaseToLoan"><i class="fab fa-twitter"></i></a>
 
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
 
           </div>
 
@@ -195,7 +196,7 @@
 
           <p>
             <i class="fas fa-phone-alt"></i>
-            +91 7033313450
+            +91 9217354577
           </p>
 
           <p>
@@ -205,7 +206,7 @@
 
           <p>
             <i class="fas fa-map-marker-alt"></i>
-            Prayagraj, Uttar Pradesh, India
+            1125-26 i-thum towers-b , pilot No-A40, Sector-62, noida, Noida, Uttar Pradesh 201301
           </p>
 
         </div>
