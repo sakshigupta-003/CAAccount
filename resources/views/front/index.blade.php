@@ -209,30 +209,81 @@
       </p>
       
     </div>
-
-   <!-- BOTTOM CARDS SECTION -->
+<!-- BOTTOM CARDS SECTION -->
 <div class="bottom-image">
     <div class="aboutcards">
         <!-- Card 1 -->
         <div class="card" data-card="1">
-            <img src="{{ asset('front_assets/images/Whats-New-img.jpg') }}" alt="What's New" class="card__image">
-            <h3 class="card__title"><i class="fas fa-newspaper"></i> WHAT'S NEW</h3>
-            <a href="{{ route('about.detail', 1) }}" class="card__btn">Read More</a>
+            <div class="card__image-wrapper">
+                <img src="{{ asset('front_assets/images/Whats-New-img.jpg') }}" alt="What's New" class="card__image">
+                <div class="card__overlay">
+                    <span class="card__badge">Latest</span>
+                </div>
+            </div>
+            <div class="card__content">                <div class="card__icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <h3 class="card__title">WHAT'S NEW</h3>
+                <p class="card__description">Stay updated with the latest news, features, and announcements from Accountech.</p>
+                <div class="card__footer">
+                    <a href="{{ route('about.detail', 1) }}" class="card__btn">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+
         <!-- Card 2 -->
         <div class="card" data-card="2">
-            <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
-            <h3 class="card__title"><i class="fas fa-calendar-alt"></i> EVENT CALENDAR</h3>
-            <a href="{{ route('about.detail', 2) }}" class="card__btn">Read More</a>
+            <div class="card__image-wrapper">
+                <img src="{{ asset('front_assets/images/Event-Calendar-img.jpg') }}" alt="Event Calendar" class="card__image">
+                <div class="card__overlay">
+                    <span class="card__badge">Upcoming</span>
+                </div>
+            </div>
+            <div class="card__content">
+                <div class="card__icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="card__title">EVENT CALENDAR</h3>
+                <p class="card__description">Join our webinars, workshops, and training sessions to enhance your skills.</p>
+                <div class="card__footer">
+                    <a href="{{ route('about.detail', 2) }}" class="card__btn">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+
         <!-- Card 3 -->
         <div class="card" data-card="3">
-            <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
-            <h3 class="card__title"><i class="fas fa-briefcase"></i> CAREER</h3>
-            <a href="{{ route('about.detail', 3) }}" class="card__btn">Read More</a>
+            <div class="card__image-wrapper">
+                <img src="{{ asset('front_assets/images/Career-img.jpg') }}" alt="Career" class="card__image">
+                <div class="card__overlay">
+                    <span class="card__badge">Hiring</span>
+                </div>
+            </div>
+            <div class="card__content">
+                <div class="card__icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="card__title">CAREER</h3>
+                <p class="card__description">Join our team and grow your career with exciting opportunities at Accountech.</p>
+                <div class="card__footer">
+                    <a href="{{ route('about.detail', 3) }}" class="card__btn">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
+
   </div>
 </section>
 

@@ -975,7 +975,7 @@ margin-top: 10px;
 /* Close Button */
 .close-sidebar {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 20px;
     background: rgba(19, 137, 201, 0.1);
     border: none;
@@ -999,8 +999,7 @@ margin-top: 10px;
 
 /* Logo Wrapper */
 .mobile-logo-wrapper {
-    text-align: center;
-    margin-top: 20px;
+    text-align: left;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid rgba(19, 137, 201, 0.1);

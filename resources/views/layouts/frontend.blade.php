@@ -67,7 +67,7 @@
   <div class="mobile-logo-wrapper">
     <a class="mobile-navbar-logo" href="{{ URL::to('/') }}">
       <img src="{{ asset('front_assets/images/mainlogo.jpeg') }}" alt="Accountech">
-      <span class="logo-text">Accountech</span>
+      
     </a>
   </div>
 
