@@ -10,8 +10,8 @@
 @section('content')
 
   <!-- ========================
-           Contact HEADER SECTION
-      ========================= -->
+             Contact HEADER SECTION
+        ========================= -->
   <div class="about-header-wrapper">
     <!-- Background Image -->
     <img src="{{ asset('front_assets/images/banner7.avif') }}" alt="About Us Background" class="about-header-bg">
@@ -33,8 +33,8 @@
     </div>
   </div>
   <!-- ========================
-       CONTACT SECTION (Professional)
-  ========================= -->
+         CONTACT SECTION (Professional)
+    ========================= -->
   <section class="contact-section" aria-label="Contact Us">
     <div class="contact-container-main">
       <!-- Section Header -->
@@ -129,68 +129,4 @@
       </div>
     </div>
   </section>
-  <!-- Chat Popup Widget -->
-  <div class="chat-widget">
-    <button class="chat-toggle-btn" id="chatToggleBtn">
-      <i class="fas fa-comment-dots"></i>
-      <span class="unread-badge" id="unreadBadge" style="display: none;">0</span>
-    </button>
-
-    <div class="popup-container" id="popupContainer">
-      <div class="popup-header">
-        <h3><i class="fas fa-headset"></i> Support Chat</h3>
-        <button class="close-popup" id="closePopupBtn"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="messages-area" id="messagesArea">
-        <!-- Message 1: Incoming from Mart's Malt Shop (unread) -->
-        <div class="popupcard incoming unread" data-msg-id="1">
-          <div class="message-sender">
-            <span class="avatar-icon"><i class="fas fa-store"></i></span>
-            Mart's Malt Shop
-          </div>
-          <div class="message-bubble">
-            Can you provide an update on my tax return?
-          </div>
-          <div class="timestamp">Just now</div>
-        </div>
-
-        <!-- Message 2: Outgoing reply from Steve (read by default - we sent it) -->
-        <div class="popupcard outgoing" data-msg-id="2">
-          <div class="message-sender">
-            <span class="avatar-icon"><i class="fas fa-user-check"></i></span>
-            Steve@1-54Accountech
-          </div>
-          <div class="message-bubble">
-            Yes, it's ready for your review!
-          </div>
-          <div class="timestamp">Now</div>
-        </div>
-
-        <!-- Message 3: New incoming from another client (unread) -->
-        <div class="popupcard incoming unread" data-msg-id="3">
-          <div class="message-sender">
-            <span class="avatar-icon"><i class="fas fa-user"></i></span>
-            Emily Chen
-          </div>
-          <div class="message-bubble">
-            I have a question about the financial planning services you offer.
-          </div>
-          <div class="timestamp">2 min ago</div>
-        </div>
-
-        <!-- Message 4: Outgoing auto-reply (read) -->
-        <div class="popupcard outgoing" data-msg-id="4">
-          <div class="message-sender">
-            <span class="avatar-icon"><i class="fas fa-headset"></i></span>
-            Support Agent
-          </div>
-          <div class="message-bubble">
-            Sure! We offer comprehensive financial planning that includes retirement, investments, and tax optimization.
-            How can I assist further?
-          </div>
-          <div class="timestamp">Just now</div>
-        </div>
-      </div>
-    </div>
-  </div>
 @endsection
