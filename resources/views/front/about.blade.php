@@ -44,6 +44,7 @@
         <h2 class="about-us__title">Welcome to Accountech</h2>
       </div>
 
+    
       <!-- RIGHT COLUMN (Description + Button) -->
       <div class="right-about">
         <p class="about-us__description">
@@ -58,8 +59,13 @@
           professionals which enables the firm to keep pace with contemporary developments and to meet the needs of its
           clients.
         </p>
-
+<div class="signature-line">
+    <i class="fas fa-quote-left" style="color: rgb(19, 137, 201);"></i>
+    <span class="signature-text">Trusted by thousands since 2015</span>
+    <i class="fas fa-quote-right" style="color: rgb(19, 137, 201);"></i>
+</div>
       </div>
+      
 
       <!-- BOTTOM CARDS SECTION -->
       <div class="bottom-image">
@@ -310,7 +316,7 @@
             </div>
             <div class="form-group">
               <label for="message"><i class="fas fa-comment"></i> Message *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+              <textarea id="message" name="message" rows="1" placeholder="Your message here..." required></textarea>
             </div>
             <button type="submit" class="submit-btn">
               <span>Send Message</span>

@@ -9,147 +9,144 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 @endpush
 @section('content')
- <!-- ========================
-     HERO SECTION WITH AUTOMATIC SLIDER
-========================= -->
-<section class="hero" aria-label="Hero section with financial solutions">
+    <!-- ========================
+             HERO SECTION WITH AUTOMATIC SLIDER
+        ========================= -->
+    <section class="hero" aria-label="Hero section with financial solutions">
 
-    <!-- Slider Container -->
-    <div class="hero-slider">
-        <div class="hero-slide active">
-            <img src="{{ asset('front_assets/images/banner7.avif') }}" alt="Financial planning" class="hero-slide__bg">
-        </div>
-        <div class="hero-slide">
-            <img src="{{ asset('front_assets/images/banner8.jpg') }}" alt="Accounting services" class="hero-slide__bg">
-        </div>
-        <div class="hero-slide">
-            <img src="{{ asset('front_assets/images/banner9.jpg') }}" alt="Tax consultation" class="hero-slide__bg">
-        </div>
-    </div>
-
-    <!-- Overlay -->
-    <div class="hero__overlay"></div>
-
-    <!-- Content -->
-    <div class="hero__container">
-        <div class="hero__content">
-            <h1 class="hero__title">Unlock Your Financial Potential with Accountech</h1>
-            <p class="hero__subtitle">Empowering Your Financial Journey with Expert Accounting Solutions</p>
-            <a href="{{ route('contact') }}" class="hero__btn">Get Started</a>
-        </div>
-    </div>
-
-    <!-- Navigation Arrows -->
-    <button class="slider-arrow prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-    <button class="slider-arrow next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-
-    <!-- Dots -->
-    <div class="slider-dots">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-    </div>
-
-</section>
-
-
-<!-- Right Side Popup Widget -->
-<div class="right-popup-widget">
-    <!-- Floating Button -->
-    <button class="popup-toggle-btn" id="popupToggleBtn">
-        <i class="fas fa-headset"></i>
-        <span class="pulse-dot"></span>
-    </button>
-
-    <!-- Popup Container -->
-    <div class="right-popup-container" id="rightPopupContainer">
-        <div class="popup-header">
-            <div class="header-info">
-                <i class="fas fa-chart-line"></i>
-                <div>
-                    <h3>Accountech Assistant</h3>
-                    <p>Online • Ready to help</p>
-                </div>
+        <!-- Slider Container -->
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="{{ asset('front_assets/images/banner7.avif') }}" alt="Financial planning" class="hero-slide__bg">
             </div>
-            <button class="close-popup" id="closeRightPopupBtn">
-                <i class="fas fa-times"></i>
-            </button>
+            <div class="hero-slide">
+                <img src="{{ asset('front_assets/images/banner8.jpg') }}" alt="Accounting services" class="hero-slide__bg">
+            </div>
+            <div class="hero-slide">
+                <img src="{{ asset('front_assets/images/banner9.jpg') }}" alt="Tax consultation" class="hero-slide__bg">
+            </div>
         </div>
 
-        <div class="popup-body">
-            <!-- Quick Actions -->
-            <div class="quick-actions">
-                <button class="action-btn" data-action="support">
-                    <i class="fas fa-headset"></i>
-                    <span>Support</span>
-                </button>
-                <button class="action-btn" data-action="account">
-                    <i class="fas fa-user-circle"></i>
-                    <span>My Account</span>
-                </button>
-                <button class="action-btn" data-action="services">
-                    <i class="fas fa-bag-shopping"></i>
-                    <span>Services</span>
-                </button>
-                <button class="action-btn" data-action="courses">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Courses</span>
-                </button>
-            </div>
+        <!-- Overlay -->
+        <div class="hero__overlay"></div>
 
-            <!-- Content Area (Dynamic) -->
-            <div class="popup-content-area" id="popupContentArea">
-                <!-- Default Content -->
-                <div class="content-default">
-                    <div class="welcome-message">
-                        <i class="fas fa-hand-wave"></i>
-                        <h4>Welcome to Accountech!</h4>
-                        <p>How can we assist you today?</p>
-                    </div>
-                    
-                    <div class="featured-tips">
-                        <div class="tip-card">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <strong>Tax Saving Tip</strong>
-                                <p>Invest in Section 80C to save up to ₹46,800 in taxes.</p>
-                            </div>
-                        </div>
-                        <div class="tip-card">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <strong>Financial Planning</strong>
-                                <p>Start SIP with just ₹500 per month for long-term wealth.</p>
-                            </div>
-                        </div>
-                        <div class="tip-card">
-                            <i class="fas fa-file-invoice"></i>
-                            <div>
-                                <strong>GST Filing Due</strong>
-                                <p>GSTR-3B due date: 20th of every month.</p>
-                            </div>
-                        </div>
+        <!-- Content -->
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Unlock Your Financial Potential with Accountech</h1>
+                <p class="hero__subtitle">Empowering Your Financial Journey with Expert Accounting Solutions</p>
+                <a href="{{ route('contact') }}" class="hero__btn">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="slider-arrow prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Dots -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+
+    </section>
+
+
+    <!-- Right Side Popup Widget -->
+    <div class="right-popup-widget">
+        <!-- Floating Button -->
+        <button class="popup-toggle-btn" id="popupToggleBtn">
+            <i class="fas fa-headset"></i>
+            <span class="pulse-dot"></span>
+        </button>
+
+        <!-- Popup Container -->
+        <div class="right-popup-container" id="rightPopupContainer">
+            <div class="popup-header">
+                <div class="header-info">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h3>Accountech Assistant</h3>
+                        <p>Online • Ready to help</p>
                     </div>
                 </div>
+                <button class="close-popup" id="closeRightPopupBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="popup-body">
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn" data-action="support">
+                        <i class="fas fa-headset"></i>
+                        <span>Support</span>
+                    </button>
+                    <button class="action-btn" data-action="account">
+                        <i class="fas fa-user-circle"></i>
+                        <span>My Account</span>
+                    </button>
+                    <button class="action-btn" data-action="services">
+                        <i class="fas fa-bag-shopping"></i>
+                        <span>Services</span>
+                    </button>
+                    <button class="action-btn" data-action="courses">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Courses</span>
+                    </button>
+                </div>
+
+                <!-- Content Area (Dynamic) -->
+                <div class="popup-content-area" id="popupContentArea">
+                    <!-- Default Content -->
+                    <div class="content-default">
+                        <div class="welcome-message">
+                            <i class="fas fa-hand-wave"></i>
+                            <h4>Welcome to Accountech!</h4>
+                            <p>How can we assist you today?</p>
+                        </div>
+
+                        <div class="featured-tips">
+                            <div class="tip-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Tax Saving Tip</strong>
+                                    <p>Invest in Section 80C to save up to ₹46,800 in taxes.</p>
+                                </div>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Financial Planning</strong>
+                                    <p>Start SIP with just ₹500 per month for long-term wealth.</p>
+                                </div>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-file-invoice"></i>
+                                <div>
+                                    <strong>GST Filing Due</strong>
+                                    <p>GSTR-3B due date: 20th of every month.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="popup-footer">
+                <input type="text" placeholder="Type your question here..." id="chatInput">
+                <button id="sendMessageBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
         </div>
-
-        <!-- Footer -->
-        <div class="popup-footer">
-            <input type="text" placeholder="Type your question here..." id="chatInput">
-            <button id="sendMessageBtn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
     </div>
-</div>
-
-
-
 
     <!-- ========================
-                         ABOUT US SECTION
-                    ========================= -->
+                                 ABOUT US SECTION
+                            ========================= -->
     <section class="about-us" aria-label="About Accountech">
         <div class="about-us__container">
             <!-- LEFT COLUMN (Title + Subtitle) -->
@@ -173,7 +170,11 @@
                     professionals which enables the firm to keep pace with contemporary developments and to meet the needs
                     of its clients.
                 </p>
-
+<div class="signature-line">
+    <i class="fas fa-quote-left" style="color: rgb(19, 137, 201);"></i>
+    <span class="signature-text">Trusted by thousands since 2015</span>
+    <i class="fas fa-quote-right" style="color: rgb(19, 137, 201);"></i>
+</div>
             </div>
             <!-- BOTTOM CARDS SECTION -->
             <div class="bottom-image">
@@ -253,15 +254,12 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </section>
 
     <!-- ========================
-                         OUR COURSES SECTION
-                    ========================= -->
+                                 OUR COURSES SECTION
+                            ========================= -->
     <section class="courses-section" aria-label="Our Courses">
         <div class="courses-container">
             <!-- Section Header (centered) -->
@@ -405,8 +403,8 @@
         </div>
     </section>
     <!-- ========================
-                         OUR SERVICES SECTION (Overlay Background Image in HTML)
-                    ========================= -->
+                                 OUR SERVICES SECTION (Overlay Background Image in HTML)
+                            ========================= -->
     <section class="services-section" aria-label="Our Services">
         <!-- Background Image (added directly in HTML) -->
         <img class="services-bg" src="front_assets/images/service.jpg" alt="Financial services background">
@@ -490,8 +488,8 @@
         </div>
     </section>
     <!-- ========================
-             CONTACT SECTION (Professional)
-        ========================= -->
+                     CONTACT SECTION (Professional)
+                ========================= -->
     <section class="contact-section" aria-label="Contact Us">
         <div class="contact-container-main">
             <!-- Section Header -->
@@ -576,7 +574,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message"><i class="fas fa-comment"></i> Message *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your message here..."
+                            <textarea id="message" name="message" rows="1" placeholder="Your message here..."
                                 required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">

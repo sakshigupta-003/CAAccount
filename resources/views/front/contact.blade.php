@@ -118,7 +118,7 @@
             </div>
             <div class="form-group">
               <label for="message"><i class="fas fa-comment"></i> Message *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+              <textarea id="message" name="message" rows="1" placeholder="Your message here..." required></textarea>
             </div>
             <button type="submit" class="submit-btn">
               <span>Send Message</span>
