@@ -129,4 +129,95 @@
       </div>
     </div>
   </section>
+    <!-- Right Side Popup Widget -->
+    <div class="right-popup-widget">
+        <!-- Floating Button -->
+        <button class="popup-toggle-btn" id="popupToggleBtn">
+            <i class="fas fa-headset"></i>
+            <span class="pulse-dot"></span>
+        </button>
+
+        <!-- Popup Container -->
+        <div class="right-popup-container" id="rightPopupContainer">
+            <div class="popup-header">
+                <div class="header-info">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h3>Accountech Assistant</h3>
+                        <p>Online • Ready to help</p>
+                    </div>
+                </div>
+                <button class="close-popup" id="closeRightPopupBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="popup-body">
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn" data-action="support">
+                        <i class="fas fa-headset"></i>
+                        <span>Support</span>
+                    </button>
+                    <button class="action-btn" data-action="account">
+                        <i class="fas fa-user-circle"></i>
+                        <span>My Account</span>
+                    </button>
+                    <button class="action-btn" data-action="services">
+                        <i class="fas fa-bag-shopping"></i>
+                        <span>Services</span>
+                    </button>
+                    <button class="action-btn" data-action="courses">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Courses</span>
+                    </button>
+                </div>
+
+                <!-- Content Area (Dynamic) -->
+                <div class="popup-content-area" id="popupContentArea">
+                    <!-- Default Content -->
+                    <div class="content-default">
+                        <div class="welcome-message">
+                            <i class="fas fa-hand-wave"></i>
+                            <h4>Welcome to Accountech!</h4>
+                            <p>How can we assist you today?</p>
+                        </div>
+
+                        <div class="featured-tips">
+                            <div class="tip-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Tax Saving Tip</strong>
+                                    <p>Invest in Section 80C to save up to ₹46,800 in taxes.</p>
+                                </div>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Financial Planning</strong>
+                                    <p>Start SIP with just ₹500 per month for long-term wealth.</p>
+                                </div>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-file-invoice"></i>
+                                <div>
+                                    <strong>GST Filing Due</strong>
+                                    <p>GSTR-3B due date: 20th of every month.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="popup-footer">
+                <input type="text" placeholder="Type your question here..." id="chatInput">
+                <button id="sendMessageBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
 @endsection
