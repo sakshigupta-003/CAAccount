@@ -15,97 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-    (function() {
-    const toggleBtn = document.getElementById('chatToggleBtn');
-    const popup = document.getElementById('popupContainer');
-    const closeBtn = document.getElementById('closePopupBtn');
-    const unreadBadge = document.getElementById('unreadBadge');
-    const messagesArea = document.getElementById('messagesArea');
-    
-    // Function to count unread messages
-    function updateUnreadCount() {
-      const unreadMessages = document.querySelectorAll('.popupcard.unread');
-      const count = unreadMessages.length;
-      if (count > 0) {
-        unreadBadge.textContent = count;
-        unreadBadge.style.display = 'flex';
-      } else {
-        unreadBadge.style.display = 'none';
-      }
-    }
-
-    // Mark all messages as read and remove unread styling
-    function markAllAsRead() {
-      const unreadMessages = document.querySelectorAll('.popupcard.unread');
-      unreadMessages.forEach(msg => {
-        msg.classList.remove('unread');
-      });
-      updateUnreadCount();
-    }
-
-    // Open popup
-    function openPopup() {
-      popup.classList.add('active');
-      // When opened, mark all as read (WhatsApp behavior)
-      markAllAsRead();
-    }
-
-    function closePopup() {
-      popup.classList.remove('active');
-    }
-
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (popup.classList.contains('active')) {
-        closePopup();
-      } else {
-        openPopup();
-      }
-    });
-
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closePopup();
-    });
-
-    // Close popup when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!popup.contains(event.target) && !toggleBtn.contains(event.target) && popup.classList.contains('active')) {
-        closePopup();
-      }
-    });
-
-    // Initial unread count (messages 1 and 3 are unread)
-    updateUnreadCount();
-
-    // Optional: simulate new incoming message after 10 seconds (just for demo)
-    setTimeout(() => {
-      // Only add if popup is closed? We'll add regardless but if popup is open, we might not want to increment? 
-      // Better: add message and update unread count if popup is not active.
-      if (!popup.classList.contains('active')) {
-        const newMsg = document.createElement('div');
-        newMsg.className = 'popupcard incoming unread';
-        newMsg.setAttribute('data-msg-id', Date.now());
-        newMsg.innerHTML = `
-          <div class="message-sender">
-            <span class="avatar-icon"><i class="fas fa-bell"></i></span>
-            System Alert
-          </div>
-          <div class="message-bubble">
-            Your tax filing deadline is approaching. Need assistance?
-          </div>
-          <div class="timestamp">Just now</div>
-        `;
-        messagesArea.appendChild(newMsg);
-        updateUnreadCount();
-        // Auto scroll to bottom
-        messagesArea.scrollTop = messagesArea.scrollHeight;
-      }
-    }, 10000);
-  })();
-
-  // ========================
-// HERO SLIDER FUNCTIONALITY
+   // ========================
+// HERO SLIDER - SINGLE CLEAN FUNCTION
 // ========================
 (function() {
     const slides = document.querySelectorAll('.hero-slide');
@@ -114,196 +25,293 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('nextSlide');
     let currentSlide = 0;
     let slideInterval;
-    const intervalTime = 2000; // Change slide every 5 seconds
+    const intervalTime = 2000;
 
-    // Function to show specific slide
+    if (slides.length === 0) return;
+
     function showSlide(index) {
-        // Remove active class from all slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
-        });
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
         
-        // Remove active class from all dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Add active class to current slide and dot
         slides[index].classList.add('active');
         dots[index].classList.add('active');
         currentSlide = index;
     }
 
-    // Next slide function
     function nextSlide() {
-        let newIndex = currentSlide + 1;
-        if (newIndex >= slides.length) {
-            newIndex = 0;
-        }
-        showSlide(newIndex);
+        showSlide((currentSlide + 1) % slides.length);
     }
 
-    // Previous slide function
     function prevSlide() {
-        let newIndex = currentSlide - 1;
-        if (newIndex < 0) {
-            newIndex = slides.length - 1;
-        }
-        showSlide(newIndex);
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
     }
 
-    // Start automatic slideshow
     function startSlideshow() {
+        if (slideInterval) clearInterval(slideInterval);
         slideInterval = setInterval(nextSlide, intervalTime);
     }
 
-    // Stop automatic slideshow
     function stopSlideshow() {
-        clearInterval(slideInterval);
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = null;
     }
 
-    // Event listeners for arrows
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopSlideshow();
-            startSlideshow(); // Restart interval after manual navigation
-        });
-    }
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); stopSlideshow(); startSlideshow(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); stopSlideshow(); startSlideshow(); });
     
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopSlideshow();
-            startSlideshow();
-        });
-    }
-
-    // Event listeners for dots
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            stopSlideshow();
-            startSlideshow();
-        });
+        dot.addEventListener('click', () => { showSlide(index); stopSlideshow(); startSlideshow(); });
     });
 
-    // Pause slideshow on hover
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('mouseenter', stopSlideshow);
         heroSection.addEventListener('mouseleave', startSlideshow);
     }
 
-    // Start the slideshow
     startSlideshow();
+})();
+// ========================
+// RIGHT SIDE POPUP WIDGET
+// ========================
+(function() {
+    const toggleBtn = document.getElementById('popupToggleBtn');
+    const popup = document.getElementById('rightPopupContainer');
+    const closeBtn = document.getElementById('closeRightPopupBtn');
+    const contentArea = document.getElementById('popupContentArea');
 
-    // ========================
-    // DASHBOARD POPUP
-    // ========================
-    const openBtn = document.getElementById('openDashboardBtn');
-    const popup = document.getElementById('dashboardPopup');
-    const closeBtn = document.getElementById('closeDashboardBtn');
+    // Content templates for different actions
+    const contentTemplates = {
+        default: `
+            <div class="content-default">
+                <div class="welcome-message">
+                    <i class="fas fa-hand-wave"></i>
+                    <h4>Welcome to Accountech!</h4>
+                    <p>How can we assist you today?</p>
+                </div>
+                <div class="featured-tips">
+                    <div class="tip-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Tax Saving Tip</strong>
+                            <p>Invest in Section 80C to save up to ₹46,800 in taxes.</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <strong>Financial Planning</strong>
+                            <p>Start SIP with just ₹500 per month for long-term wealth.</p>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        `,
+        account: `
+            <div class="account-info">
+                <h4><i class="fas fa-user-circle"></i> My Account</h4>
+                <div class="account-details">
+                    <p><span>Account Holder:</span><span>John Doe</span></p>
+                    <p><span>Account Type:</span><span>Premium Plus</span></p>
+                    <p><span>Member Since:</span><span>Jan 2024</span></p>
+                    <p><span>Total Savings:</span><span>₹1,24,500</span></p>
+                    <p><span>Active Services:</span><span>3</span></p>
+                </div>
+                <div class="tip-card" style="margin-top: 10px;">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <strong>Security Status</strong>
+                        <p>Your account is fully secured • 2FA Enabled</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        services: `
+            <div class="services-list">
+                <h4><i class="fas fa-bag-shopping"></i> Our Services</h4>
+                <div class="service-item">
+                    <i class="fas fa-search"></i>
+                    <div>
+                        <strong>Audit Services</strong>
+                        <p>Financial audit & compliance</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <div>
+                        <strong>Tax Preparation</strong>
+                        <p>Income tax & GST filing</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <strong>Financial Planning</strong>
+                        <p>Wealth & retirement planning</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        courses: `
+            <div class="courses-list">
+                <h4><i class="fas fa-graduation-cap"></i> Popular Courses</h4>
+                <div class="course-item">
+                    <i class="fas fa-calculator"></i>
+                    <div>
+                        <strong>Tally Prime</strong>
+                        <p>Master accounting software</p>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-percentage"></i>
+                    <div>
+                        <strong>GST Training</strong>
+                        <p>Complete GST compliance</p>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-coins"></i>
+                    <div>
+                        <strong>Taxation Course</strong>
+                        <p>Income tax & corporate tax</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        support: `
+            <div class="support-options">
+                <h4><i class="fas fa-headset"></i> Support Options</h4>
+                <div class="option" onclick="window.location.href='tel:+919217354577'">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>+91 92173 54577 • Available 24/7</p>
+                    </div>
+                </div>
+                <div class="option" onclick="window.location.href='mailto:support@accountech.com'">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email Support</strong>
+                        <p>support@accountech.com</p>
+                    </div>
+                </div>
+            </div>
+        `
+    };
 
+    // Function to load content
+    function loadContent(type) {
+        if (contentTemplates[type]) {
+            contentArea.innerHTML = contentTemplates[type];
+        } else {
+            contentArea.innerHTML = contentTemplates.default;
+        }
+    }
+
+    // Open popup
     function openPopup() {
         popup.classList.add('active');
-        document.body.classList.add('popup-open');
+        loadContent('default');
     }
 
+    // Close popup
     function closePopup() {
         popup.classList.remove('active');
-        document.body.classList.remove('popup-open');
     }
 
-    if (openBtn) openBtn.addEventListener('click', openPopup);
-    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    // Toggle popup
+    function togglePopup() {
+        if (popup.classList.contains('active')) {
+            closePopup();
+        } else {
+            openPopup();
+        }
+    }
 
-    // Close popup on ESC key
+    // Event listeners for action buttons
+    function setupActionButtons() {
+        const actionBtns = document.querySelectorAll('.action-btn');
+        actionBtns.forEach(btn => {
+            btn.removeEventListener('click', handleActionClick);
+            btn.addEventListener('click', handleActionClick);
+        });
+    }
+
+    function handleActionClick(e) {
+        const action = this.getAttribute('data-action');
+        if (action && contentTemplates[action]) {
+            loadContent(action);
+        }
+    }
+
+    // Watch for DOM changes to reattach action button listeners
+    const observer = new MutationObserver(() => {
+        setupActionButtons();
+    });
+    observer.observe(contentArea, { childList: true, subtree: true });
+
+    // Toggle button click
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', togglePopup);
+    }
+
+    // Close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePopup);
+    }
+
+    // Close on outside click
+    document.addEventListener('click', (event) => {
+        if (popup && popup.classList.contains('active')) {
+            if (!popup.contains(event.target) && !toggleBtn.contains(event.target)) {
+                closePopup();
+            }
+        }
+    });
+
+    // Close on ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
             closePopup();
         }
     });
 
-    // Close popup when clicking outside
-    document.body.addEventListener('click', (e) => {
-        if (popup && popup.classList.contains('active')) {
-            if (!popup.contains(e.target) && e.target !== openBtn) {
-                closePopup();
-            }
+    // Chat input handler
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendMessageBtn');
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            const responseDiv = document.createElement('div');
+            responseDiv.className = 'tip-card';
+            responseDiv.style.marginTop = '10px';
+            responseDiv.innerHTML = `
+                <i class="fas fa-robot"></i>
+                <div>
+                    <strong>Accountech Assistant</strong>
+                    <p>Thank you for your message! Our team will get back to you shortly.</p>
+                </div>
+            `;
+            contentArea.appendChild(responseDiv);
+            chatInput.value = '';
+            contentArea.scrollTop = contentArea.scrollHeight;
         }
-    });
-
-    if (popup) {
-        popup.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
     }
 
-    // ========================
-    // CHARTS INITIALIZATION
-    // ========================
-    const revenueChart = document.getElementById('revenueChart');
-    if (revenueChart) {
-        const revenueCtx = revenueChart.getContext('2d');
-        new Chart(revenueCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Revenue ($)',
-                    data: [42000, 48500, 53200, 61800, 72500, 89200],
-                    backgroundColor: 'rgba(19, 137, 201, 0.7)',
-                    borderColor: 'rgb(19, 137, 201)',
-                    borderWidth: 1,
-                    borderRadius: 8,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    tooltip: { callbacks: { label: (ctx) => `$${ctx.raw.toLocaleString()}` } }
-                },
-                scales: {
-                    y: { beginAtZero: true, grid: { color: '#eef2f6' }, ticks: { callback: (val) => `$${val/1000}k` } }
-                }
+    if (sendBtn) {
+        sendBtn.addEventListener('click', sendMessage);
+    }
+    
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
             }
         });
     }
 
-    const timeChart = document.getElementById('timeSavedChart');
-    if (timeChart) {
-        const timeCtx = timeChart.getContext('2d');
-        new Chart(timeCtx, {
-            type: 'line',
-            data: {
-                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                datasets: [{
-                    label: 'Hours Saved',
-                    data: [14, 18, 22, 26],
-                    borderColor: 'rgb(19, 137, 201)',
-                    backgroundColor: 'rgba(19, 137, 201, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: 'rgb(19, 137, 201)',
-                    pointRadius: 4,
-                    pointHoverRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    tooltip: { callbacks: { label: (ctx) => `${ctx.raw} hours` } }
-                },
-                scales: {
-                    y: { beginAtZero: true, grid: { color: '#eef2f6' }, title: { display: true, text: 'Hours Saved' } }
-                }
-            }
-        });
-    }
+    // Initialize action buttons
+    setupActionButtons();
 })();
