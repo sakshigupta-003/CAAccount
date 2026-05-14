@@ -510,7 +510,7 @@
                         </div>
 
                         <button class="enroll-btn"
-                            onclick="window.location.href='{{ route('service.enroll', $service->id) }}'">
+                            onclick="window.location.href='{{ route('contact', $service->id) }}'">
                             <i class="fas fa-paper-plane"></i> Get Started Now
                         </button>
                     </div>
