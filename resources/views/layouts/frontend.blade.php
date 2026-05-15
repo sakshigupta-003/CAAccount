@@ -91,11 +91,34 @@
 
     <!-- Social Icons -->
     <div class="footer-social">
+<<<<<<< HEAD
       <a href="https://www.facebook.com/share/1CjKpu3mD1/"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D"><i class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/company/easetoloan"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://twitter.com/EaseToLoan"><i class="fab fa-twitter"></i></a>
       <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+=======
+      <a href="https://www.facebook.com/share/1CjKpu3mD1/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D" target="_blank"
+        rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/company/easetoloan" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <a href="https://twitter.com/EaseToLoan" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+>>>>>>> ad7fe25a655841638fa39a2cd45062a395f017f1
     </div>
   </div>
   <!-- OVERLAY -->
@@ -129,6 +152,7 @@
 
           <div class="footer-social">
 
+<<<<<<< HEAD
             <a href="https://www.facebook.com/share/1CjKpu3mD1/"><i class="fab fa-facebook-f"></i></a>
 
             <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D"><i
@@ -139,6 +163,28 @@
             <a href="https://twitter.com/EaseToLoan"><i class="fab fa-twitter"></i></a>
 
             <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+=======
+            <a href="https://www.facebook.com/share/1CjKpu3mD1/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/company/easetoloan" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://twitter.com/EaseToLoan" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+>>>>>>> ad7fe25a655841638fa39a2cd45062a395f017f1
 
           </div>
 
@@ -196,23 +242,42 @@
 
           <p>
             <i class="fas fa-phone-alt"></i>
+<<<<<<< HEAD
           <a href="tel:+919217354577">+91 9217354577</a>
           </p>
 
            <p>
             <i class="fas fa-phone-alt"></i>
             <a href="tel:+919876543210">+91 9876543210</a>  
+=======
+            <a href="tel:+919217354577">+91 9217354577</a>
+          </p>
+
+          <p>
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+919876543210">+91 9876543210</a>
+>>>>>>> ad7fe25a655841638fa39a2cd45062a395f017f1
           </p>
 
           <p>
             <i class="fas fa-envelope"></i>
+<<<<<<< HEAD
            <a href="mailto:info@accountech.com">info@accountech.com</a>
+=======
+            <a href="mailto:info@accountech.com">info@accountech.com</a>
+>>>>>>> ad7fe25a655841638fa39a2cd45062a395f017f1
           </p>
 
           <p>
             <i class="fas fa-map-marker-alt"></i>
+<<<<<<< HEAD
             <a href="https://maps.google.com/?q=123+Financial+District">1125-26 i-thum towers-b , pilot No-A40, Sector-62, noida, Noida, Uttar Pradesh 201301</a>
             
+=======
+            <a href="https://maps.google.com/?q=123+Financial+District">1125-26 i-thum towers-b , pilot No-A40,
+              Sector-62, noida, Noida, Uttar Pradesh 201301</a>
+
+>>>>>>> ad7fe25a655841638fa39a2cd45062a395f017f1
           </p>
 
         </div>
