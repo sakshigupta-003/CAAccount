@@ -33,8 +33,8 @@
     </div>
   </div>
  <!-- ========================
-                         OUR COURSES SECTION
-                    ========================= -->
+          OUR COURSES SECTION
+   ========================= -->
     <section class="courses-section" aria-label="Our Courses">
         <div class="courses-container">
             <!-- Section Header (centered) -->

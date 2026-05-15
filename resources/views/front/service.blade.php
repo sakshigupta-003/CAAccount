@@ -52,7 +52,7 @@
       <!-- Services Grid (6 cards) -->
       <div class="services-grid">
         <!-- Card 1 -->
-        <div class="service-card">
+        <div class="service-card ">
           <div class="service-icon-wrapper">
             <i class="fas fa-search service-icon"></i>
           </div>

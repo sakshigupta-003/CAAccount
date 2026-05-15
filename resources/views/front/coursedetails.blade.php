@@ -792,7 +792,7 @@
               </div>
             </div>
 
-            <button class="enroll-btn" onclick="window.location.href='{{ route('course.enroll', $course->id) }}'">
+            <button class="enroll-btn" onclick="window.location.href='{{ route('contact', $course->id) }}'">
               <i class="fas fa-graduation-cap"></i> Enroll Now
             </button>
           </div>
