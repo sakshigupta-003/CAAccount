@@ -1,6 +1,6 @@
 /* navbar */
 /* =========================
-   PROFESSIONAL NAVBAR h
+   PROFESSIONAL NAVBAR frontend Rocky
 ========================= */
 
 .custom-navbar {
@@ -22,10 +22,12 @@
 .navbar-logo {
     text-decoration: none;
 }
+
 .navbar-logo img {
     height: 50px;
     width: auto;
 }
+
 .navbar-logo h6 {
     display: inline-flex;
     margin-top: 10px;
@@ -79,8 +81,7 @@
 }
 
 /* Active link styling (when on current page) */
-.nav-links li a.active {
-}
+.nav-links li a.active {}
 
 .nav-links li a.active::after {
     width: 100%;
@@ -141,10 +142,12 @@
 
 /* VARIANT 5: Bounce Effect */
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-3px);
     }
@@ -156,10 +159,12 @@
 
 /* VARIANT 6: Pulsing Icon */
 @keyframes pulse {
+
     0%,
     100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.2);
     }
@@ -223,7 +228,8 @@
     }
 
     .nav-links li a:hover {
-        transform: none; /* Disable translate on mobile for better UX */
+        transform: none;
+        /* Disable translate on mobile for better UX */
     }
 }
 
@@ -297,10 +303,12 @@
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
     }
+
     70% {
         transform: scale(1.05);
         box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
@@ -327,12 +335,10 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     transition: left 0.5s ease;
     z-index: -1;
 }
@@ -350,10 +356,12 @@
 
 /* OPTION 6: Bounce Effect */
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-5px);
     }
@@ -453,7 +461,8 @@
    ============================================ */
 @media (max-width: 768px) {
     .contact-btn:hover {
-        transform: translateY(-2px); /* Reduced lift on mobile */
+        transform: translateY(-2px);
+        /* Reduced lift on mobile */
     }
 }
 
@@ -686,6 +695,7 @@
 
 /* Responsive: smaller padding on very narrow devices */
 @media (max-width: 480px) {
+
     .mobile-sidebar,
     .sidebar-container {
         width: 80%;
@@ -730,7 +740,8 @@
 
 /* When scrolled – solid background */
 .custom-navbar.navbar-scrolled {
-    background-color: rgb(19, 137, 201) !important; /* your desired color */
+    background-color: rgb(19, 137, 201) !important;
+    /* your desired color */
     border-bottom-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -751,6 +762,7 @@
     border-color: #fff;
     color: #fff;
 }
+
 /* =========================
         PROFESSIONAL FOOTER
 ========================= */
@@ -812,14 +824,12 @@
 
 /* INSTAGRAM */
 .footer-social a:nth-child(2) {
-    background: linear-gradient(
-        45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888
-    );
+    background: linear-gradient(45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
 }
 
 /* LINKEDIN */
@@ -843,6 +853,7 @@
     transform: translateY(-6px) scale(1.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
+
 /* TITLES */
 
 .footer-links h4,
@@ -899,6 +910,7 @@
     color: rgb(19, 137, 201);
     margin-right: 10px;
 }
+
 .footer-contact a {
     color: #cbd5e1;
     text-decoration: none;
@@ -937,6 +949,7 @@
         padding-top: 50px;
     }
 }
+
 /* ============================================
    MOBILE SIDEBAR - CLEAN & PROFESSIONAL
    ============================================ */
@@ -1080,6 +1093,7 @@
     width: 24px;
     color: rgb(19, 137, 201);
 }
+
 .mobile-links li:nth-child(2) a::before {
     content: "\f007";
     font-family: "Font Awesome 6 Free";
@@ -1087,6 +1101,7 @@
     width: 24px;
     color: rgb(19, 137, 201);
 }
+
 .mobile-links li:nth-child(3) a::before {
     content: "\f19d";
     font-family: "Font Awesome 6 Free";
@@ -1094,6 +1109,7 @@
     width: 24px;
     color: rgb(19, 137, 201);
 }
+
 .mobile-links li:nth-child(4) a::before {
     content: "\f0f2";
     font-family: "Font Awesome 6 Free";
@@ -1239,14 +1255,12 @@
 
 /* Instagram - Real Brand Gradient */
 .mobile-sidebar .footer-social a:nth-child(2) {
-    background: linear-gradient(
-        45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888
-    );
+    background: linear-gradient(45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
     color: white;
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(220, 39, 67, 0.3);

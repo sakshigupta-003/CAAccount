@@ -16,7 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => \App\Http\Middleware\CheckRole::class,
         ]);
     })
-
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
+
+$app->usePublicPath($app->basePath('public_html'));
+
+return $app;
