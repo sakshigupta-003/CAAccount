@@ -23,3 +23,13 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 .htaccess
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.cache/
+.ovi-knowns/
+.ssh/
+.trash/
+.gitconfig
+
