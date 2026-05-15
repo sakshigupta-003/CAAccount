@@ -1,0 +1,1470 @@
+/* navbar */
+/* =========================
+   PROFESSIONAL NAVBAR
+========================= */
+
+.custom-navbar {
+    width: 100%;
+    padding: 14px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    transition: 0.3s;
+    border-bottom: 1px solid white;
+}
+
+.custom-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.navbar-logo {
+    text-decoration: none;
+}
+.navbar-logo img {
+    height: 50px;
+    width: auto;
+}
+.navbar-logo h6 {
+    display: inline-flex;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* MENU */
+/* ============================================
+   NAVBAR LINKS - ANIMATED HOVER EFFECTS
+   ============================================ */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+/* Icon animation on hover */
+.nav-links li a i {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.nav-links li a:hover i {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Text color transition on hover */
+.nav-links li a:hover {
+    transform: translateY(-1px);
+}
+
+/* Active link styling (when on current page) */
+.nav-links li a.active {
+}
+
+.nav-links li a.active::after {
+    width: 100%;
+    background: linear-gradient(90deg, #0f172a, #ffffff);
+}
+
+/* ============================================
+   ADDITIONAL ANIMATION VARIANTS (Choose one)
+   ============================================ */
+
+/* VARIANT 1: Slide In Underline (Default - from center) */
+.nav-links--center-line li a::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+}
+
+.nav-links--center-line li a:hover::after {
+    width: 80%;
+}
+
+/* VARIANT 2: Scale Up Effect */
+.nav-links--scale li a {
+    transition: transform 0.3s ease;
+}
+
+.nav-links--scale li a:hover {
+    transform: scale(1.08);
+}
+
+.nav-links--scale li a::after {
+    display: none;
+}
+
+/* VARIANT 3: Slide Up Underline */
+.nav-links--slide-up li a::after {
+    bottom: -5px;
+    height: 3px;
+}
+
+.nav-links--slide-up li a:hover::after {
+    width: 100%;
+}
+
+.nav-links--slide-up li a:hover {
+    transform: translateY(-2px);
+}
+
+/* VARIANT 4: Glowing Effect */
+.nav-links--glow li a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.nav-links--glow li a::after {
+    background: #ffffff;
+    box-shadow: 0 0 6px #ffffff;
+}
+
+/* VARIANT 5: Bounce Effect */
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.nav-links--bounce li a:hover {
+    animation: bounce 0.4s ease;
+}
+
+/* VARIANT 6: Pulsing Icon */
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.nav-links--pulse li a:hover i {
+    animation: pulse 0.4s ease;
+}
+
+/* ============================================
+   PROFESSIONAL COMBINED EFFECT (Recommended)
+   ============================================ */
+.nav-links--pro li a {
+    gap: 10px;
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.nav-links--pro li a i {
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.nav-links--pro li a:hover i {
+    transform: translateY(-3px) scale(1.15);
+}
+
+.nav-links--pro li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #0f172a, #ffffff);
+    transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.nav-links--pro li a:hover::before {
+    left: 0;
+}
+
+.nav-links--pro li a::after {
+    display: none;
+}
+
+.nav-links--pro li a:hover {
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE TOUCH DEVICES
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-links li a {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .nav-links li a i {
+        font-size: 12px;
+    }
+
+    .nav-links li a:hover {
+        transform: none; /* Disable translate on mobile for better UX */
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - Focus States
+   ============================================ */
+.nav-links li a:focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* RIGHT SIDE */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn {
+    text-decoration: none;
+    background: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ============================================
+   HOVER TRANSFORM ANIMATIONS
+   ============================================ */
+
+/* OPTION 1: Lift Up + Scale (Recommended) */
+.contact-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* OPTION 2: Slide Right */
+.contact-btn--slide:hover {
+    transform: translateX(5px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 3: Rotate Slightly */
+.contact-btn--rotate:hover {
+    transform: rotate(2deg) scale(1.02);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 4: Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.contact-btn--pulse:hover {
+    animation: pulse 0.6s ease;
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 5: Shine Effect (Glassmorphism) */
+.contact-btn--shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn--shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.contact-btn--shine:hover::before {
+    left: 100%;
+}
+
+.contact-btn--shine:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 6: Bounce Effect */
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.contact-btn--bounce:hover {
+    animation: bounce 0.4s ease;
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+}
+
+/* OPTION 7: Expand Width (for buttons with icons) */
+.contact-btn--expand {
+    gap: 8px;
+}
+
+.contact-btn--expand i {
+    transition: transform 0.3s ease;
+}
+
+.contact-btn--expand:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+    gap: 12px;
+}
+
+.contact-btn--expand:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   PROFESSIONAL COMBINED EFFECT (Recommended)
+   ============================================ */
+.contact-btn--pro {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.contact-btn--pro::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
+    z-index: -1;
+}
+
+.contact-btn--pro:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.contact-btn--pro:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: #fff;
+    color: rgb(19, 137, 201);
+    border-color: rgb(19, 137, 201);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn--pro:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ============================================
+   ACTIVE STATE (Click Feedback)
+   ============================================ */
+.contact-btn:active {
+    transform: translateY(1px) scale(0.97);
+    transition: all 0.05s ease;
+}
+
+/* ============================================
+   ICON WITHIN BUTTON (if present)
+   ============================================ */
+.contact-btn i {
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   RESPONSIVE TOUCH DEVICES
+   ============================================ */
+@media (max-width: 768px) {
+    .contact-btn:hover {
+        transform: translateY(-2px); /* Reduced lift on mobile */
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - Focus State
+   ============================================ */
+.contact-btn:focus-visible {
+    outline: 3px solid #ffd966;
+    outline-offset: 3px;
+    border-radius: 10px;
+}
+
+/* MOBILE MENU BUTTON */
+
+.mobile-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .nav-links {
+        display: none;
+    }
+
+    .support-btn {
+        display: none;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .navbar-logo img {
+        height: 50px;
+    }
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+/* CLOSE BUTTON */
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: rgb(19, 137, 201);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ========== MOBILE LINKS STYLES ========== */
+.mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-links li {
+    margin: 0;
+    width: 100%;
+}
+
+.mobile-links li a {
+    display: block;
+    text-decoration: none;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    font-size: 1.2rem;
+    font-weight: 550;
+    color: #0f172a;
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    transition: all 0.25s ease;
+    background: transparent;
+    letter-spacing: -0.2px;
+}
+
+/* Hover effect — smooth background & slight translation */
+.mobile-links li a:hover {
+    background: rgba(19, 110, 201, 0.08);
+    color: #0f3b5c;
+    padding-left: 1.25rem;
+    transform: translateX(4px);
+}
+
+/* Active / tapped state (mobile feedback) */
+.mobile-links li a:active {
+    background: rgba(19, 110, 201, 0.15);
+    transform: scale(0.98);
+}
+
+/* ========== BUTTONS (Support + Contact Us) ========== */
+/* Both buttons inside .mobile-links but not list items — style them similarly */
+.mobile-links .support-btn,
+.mobile-links .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1.2rem;
+    margin-top: 1rem;
+    border-radius: 48px;
+    transition: all 0.25s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Support button (outline style with icon) */
+.mobile-links .support-btn {
+    background: transparent;
+    border: 1.5px solid rgba(19, 110, 201, 0.5);
+    color: #136ec9;
+    backdrop-filter: blur(2px);
+}
+
+.mobile-links .support-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.mobile-links .support-btn:hover {
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    color: #fff;
+    border-color: #136ec9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 110, 201, 0.15);
+}
+
+.mobile-links .support-btn:hover i {
+    transform: scale(1.05);
+}
+
+/* Contact button (solid gradient, modern) */
+.mobile-links .contact-btn {
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 8px 18px rgba(19, 110, 201, 0.25);
+}
+
+.mobile-links .contact-btn:hover {
+    background: linear-gradient(105deg, #1a7bdf 0%, #0e5596 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(19, 110, 201, 0.35);
+}
+
+.mobile-links .contact-btn:active {
+    transform: translateY(1px);
+}
+
+/* Separate the buttons with a subtle divider (optional) */
+.mobile-links .support-btn {
+    margin-bottom: 0.75rem;
+}
+
+/* ========== ADDITIONAL TOUCHES ========== */
+/* Divider line before buttons (clean separation) */
+.mobile-links {
+    position: relative;
+}
+
+.mobile-links::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 1.2rem 0 1rem 0;
+    width: 100%;
+}
+
+/* Hide the divider if there’s no button? It’s fine; it adds structure */
+/* For better UX, ensure the sidebar has a close button (not required but recommended) */
+/* Remove default focus outline and replace with custom */
+.mobile-links li a:focus-visible,
+.mobile-links .support-btn:focus-visible,
+.mobile-links .contact-btn:focus-visible {
+    outline: 3px solid #ffb347;
+    outline-offset: 2px;
+    border-radius: 16px;
+}
+
+/* Scrollbar styling (in case content overflows) */
+.mobile-sidebar::-webkit-scrollbar,
+.sidebar-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-track,
+.sidebar-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb,
+.sidebar-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Responsive: smaller padding on very narrow devices */
+@media (max-width: 480px) {
+    .mobile-sidebar,
+    .sidebar-container {
+        width: 80%;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .mobile-links li a {
+        font-size: 1rem;
+        padding: 0.75rem 0.9rem;
+    }
+
+    .mobile-links .support-btn,
+    .mobile-links .contact-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* OVERLAY */
+
+.sidebar-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   SCROLLED NAVBAR STATE
+========================= */
+
+/* When scrolled – solid background */
+.custom-navbar.navbar-scrolled {
+    background-color: rgb(19, 137, 201) !important; /* your desired color */
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: make text/logo slightly adjust on scroll (stay white) */
+.custom-navbar.navbar-scrolled .nav-links li a,
+.custom-navbar.navbar-scrolled .navbar-logo h6 {
+    color: #fff;
+}
+
+/* Keep contact button border white on scroll */
+.custom-navbar.navbar-scrolled .contact-btn {
+    border-color: #fff;
+}
+
+/* Mobile toggle button on scroll */
+.custom-navbar.navbar-scrolled .mobile-toggle {
+    border-color: #fff;
+    color: #fff;
+}
+/* =========================
+        PROFESSIONAL FOOTER
+========================= */
+
+.main-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding-top: 70px;
+    margin-top: 80px;
+}
+
+/* TOP */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* LOGO */
+
+.footer-logo {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* SOCIAL */
+/* SOCIAL ICONS */
+
+.footer-social {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-social a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* FACEBOOK */
+.footer-social a:nth-child(1) {
+    background: #1877f2;
+}
+
+/* INSTAGRAM */
+.footer-social a:nth-child(2) {
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
+}
+
+/* LINKEDIN */
+.footer-social a:nth-child(3) {
+    background: #0a66c2;
+}
+
+/* TWITTER/X */
+.footer-social a:nth-child(4) {
+    background: #000000;
+}
+
+/* WHATSAPP */
+.footer-social a:nth-child(5) {
+    background: #25d366;
+}
+
+/* HOVER EFFECT */
+
+.footer-social a:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+/* TITLES */
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+    content: "";
+    width: 45px;
+    height: 3px;
+    background: rgb(19, 137, 201);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+/* LINKS */
+
+.footer-links ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 14px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.footer-links ul li a:hover {
+    padding-left: 5px;
+}
+
+/* CONTACT */
+
+.footer-contact p {
+    color: #cbd5e1;
+    margin-bottom: 18px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.footer-contact i {
+    color: rgb(19, 137, 201);
+    margin-right: 10px;
+}
+.footer-contact a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    margin-top: 60px;
+    padding: 22px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .main-footer {
+        padding-top: 50px;
+    }
+}
+/* ============================================
+   MOBILE SIDEBAR - CLEAN & PROFESSIONAL
+   ============================================ */
+
+/* Sidebar Container */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    max-width: 85%;
+    height: 100vh;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    z-index: 10000;
+    padding: 30px 24px;
+    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-sidebar.active {
+    left: 0;
+}
+
+/* Scrollbar Styling */
+.mobile-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb {
+    background: rgb(19, 137, 201);
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-sidebar {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background: rgba(19, 137, 201, 0.1);
+    border: none;
+    color: rgb(19, 137, 201);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-sidebar:hover {
+    background: rgb(19, 137, 201);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Logo Wrapper */
+.mobile-logo-wrapper {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(19, 137, 201, 0.1);
+}
+
+.mobile-navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-navbar-logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.mobile-navbar-logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0a2540, rgb(19, 137, 201));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* Mobile Navigation Links */
+.mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.mobile-links li {
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-links li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background: transparent;
+    letter-spacing: -0.2px;
+}
+
+/* Menu Icons using pseudo-elements */
+.mobile-links li:nth-child(1) a::before {
+    content: "\f015";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
+}
+.mobile-links li:nth-child(2) a::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
+}
+.mobile-links li:nth-child(3) a::before {
+    content: "\f19d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
+}
+.mobile-links li:nth-child(4) a::before {
+    content: "\f0f2";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    width: 24px;
+    color: rgb(19, 137, 201);
+}
+
+.mobile-links li a:hover {
+    background: rgba(19, 110, 201, 0.08);
+    color: rgb(19, 137, 201);
+    padding-left: 22px;
+    transform: translateX(8px);
+}
+
+.mobile-links li a:active {
+    background: rgba(19, 110, 201, 0.15);
+    transform: scale(0.98);
+}
+
+/* Divider line before buttons */
+.mobile-links::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 1.2rem 0 0 0;
+    width: 100%;
+}
+
+/* Buttons Container */
+.mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(19, 137, 201, 0.1);
+    border-bottom: 1px solid rgba(19, 137, 201, 0.1);
+}
+
+/* Support Button */
+.mobile-buttons .support-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 60px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    border: 1.5px solid rgba(19, 137, 201, 0.4);
+    color: rgb(19, 137, 201);
+}
+
+.mobile-buttons .support-btn i {
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.mobile-buttons .support-btn:hover {
+    background: linear-gradient(105deg, #2f9bee 0%, #0f53ab 100%);
+    color: #fff;
+    border-color: rgb(19, 137, 201);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(19, 137, 201, 0.15);
+}
+
+.mobile-buttons .support-btn:hover i {
+    transform: scale(1.05);
+}
+
+/* Contact Button */
+.mobile-buttons .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 60px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(19, 137, 201), #0f53ab);
+    border: none;
+    color: white;
+    box-shadow: 0 6px 14px rgba(19, 137, 201, 0.25);
+}
+
+.mobile-buttons .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(19, 137, 201, 0.35);
+    gap: 14px;
+}
+
+.mobile-buttons .contact-btn:active {
+    transform: translateY(1px);
+}
+
+/* ============================================
+   SOCIAL ICONS WITH REAL BRAND COLORS
+   ============================================ */
+.mobile-sidebar .footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.mobile-sidebar .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Facebook - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(1) {
+    background: #1877f2;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(24, 119, 242, 0.3);
+}
+
+/* Instagram - Real Brand Gradient */
+.mobile-sidebar .footer-social a:nth-child(2) {
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(220, 39, 67, 0.3);
+}
+
+/* LinkedIn - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(3) {
+    background: #0a66c2;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(10, 102, 194, 0.3);
+}
+
+/* Twitter/X - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(4) {
+    background: #000000;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp - Real Brand Color */
+.mobile-sidebar .footer-social a:nth-child(5) {
+    background: #25d366;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
+}
+
+/* Optional: Add YouTube if needed */
+.mobile-sidebar .footer-social a:nth-child(6) {
+    background: #ff0000;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3);
+}
+
+/* Overlay Background */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Focus States */
+.mobile-links li a:focus-visible,
+.mobile-buttons .support-btn:focus-visible,
+.mobile-buttons .contact-btn:focus-visible {
+    outline: 3px solid #ffb347;
+    outline-offset: 2px;
+    border-radius: 16px;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Mobile (480px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .mobile-sidebar {
+        width: 350px;
+        left: -350px;
+        padding: 30px 24px;
+    }
+
+    .mobile-navbar-logo img {
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .mobile-links li a {
+        padding: 16px 20px;
+        font-size: 1.05rem;
+    }
+
+    .mobile-buttons .support-btn,
+    .mobile-buttons .contact-btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    .mobile-sidebar .footer-social a {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+    .mobile-sidebar {
+        width: 280px;
+        left: -280px;
+        padding: 20px 18px;
+    }
+
+    .close-sidebar {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .mobile-navbar-logo img {
+        height: 38px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .mobile-links li a {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .mobile-buttons .support-btn,
+    .mobile-buttons .contact-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .mobile-sidebar .footer-social {
+        gap: 12px;
+    }
+
+    .mobile-sidebar .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .mobile-logo-wrapper {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Very Small Devices (below 360px) */
+@media (max-width: 360px) {
+    .mobile-sidebar {
+        width: 260px;
+        left: -260px;
+        padding: 16px 14px;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .mobile-navbar-logo img {
+        height: 40px;
+    }
+
+    .mobile-links li a {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+
+    .mobile-sidebar .footer-social {
+        gap: 10px;
+    }
+
+    .mobile-sidebar .footer-social a {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Devices (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mobile-sidebar {
+        width: 380px;
+        left: -380px;
+    }
+
+    .mobile-navbar-logo img {
+        height: 55px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .mobile-links li a {
+        padding: 18px 22px;
+        font-size: 1.1rem;
+    }
+
+    .mobile-sidebar .footer-social a {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Desktop (when sidebar is visible on larger screens if needed) */
+@media (min-width: 1025px) {
+    .mobile-sidebar {
+        width: 400px;
+        left: -400px;
+    }
+}
