@@ -20,84 +20,86 @@
 </head>
 
 <body>
+<!-- PROFESSIONAL NAVBAR -->
+<nav class="custom-navbar fixed-top">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-logo" href="{{ URL::to('/') }}">
+      <img src="{{ asset('front_assets/images/logo.png') }}" alt="Account Logo">
+    </a>
 
-  <!-- PROFESSIONAL NAVBAR (exactly as provided, only CSS adapted) -->
-  <nav class="custom-navbar fixed-top">
-    <div class="container">
-      <!-- LOGO (using placeholder but your asset path) -->
-      <a class="navbar-logo" href="{{ URL::to('/') }}">
-        <img src="{{ asset('front_assets/images/logo.png') }}" alt="Accountech">
+    <!-- DESKTOP MENU -->
+    <ul class="nav-links">
+      <li><a href="{{ URL::to('/') }}"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="{{ URL::to('/about') }}"><i class="fa-solid fa-user"></i> About Us</a></li>
+      <li><a href="{{ URL::to('/services') }}"><i class="fa-solid fa-bag-shopping"></i> Services</a></li>
+      <li><a href="{{ URL::to('/courses') }}"><i class="fa-solid fa-graduation-cap"></i> Courses</a></li>
+    </ul>
+
+    <!-- RIGHT BUTTONS -->
+    <div class="nav-right">
+      <a href="{{ URL::to('/contact') }}" class="contact-btn">
+        <i class="fa-solid fa-phone"></i> <span>Contact Us</span>
       </a>
+      <!-- MOBILE TOGGLE -->
+      <button class="mobile-toggle" id="menuOpenBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
 
-      <!-- DESKTOP MENU -->
-      <ul class="nav-links">
-        <li><a href="{{ URL::to('/') }}"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="{{ URL::to('/about') }}"><i class="fa-solid fa-user"></i> About Us</a></li>
-        <li><a href="{{ URL::to('/courses') }}"><i class="fa-solid fa-graduation-cap"></i> Courses</a></li>
-        <li><a href="{{ URL::to('/services') }}"> <i class="fa-solid fa-bag-shopping"></i> Services</a></li>
-      </ul>
-
-      <!-- RIGHT BUTTONS -->
-      <div class="nav-right">
-        <a href="{{ URL::to('/contact') }}" class="contact-btn">
-          <i class="fa-solid fa-phone"></i> <span>Contact Us</span>
-        </a>
-        <!-- MOBILE TOGGLE -->
-        <button class="mobile-toggle" id="menuOpenBtn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+<!-- MOBILE SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="mobile-navbar-header">
+    <div class="mobile-logo-wrapper">
+      <div class="mobile-navbar-logo">
+        <img src="{{ asset('front_assets/images/logo.png') }}" alt="Logo">
       </div>
     </div>
-  </nav>
-
-  <!-- MOBILE SIDEBAR -->
-  <div class="mobile-sidebar" id="mobileSidebar">
-    <!-- CLOSE BUTTON -->
-    <button class="close-sidebar" id="menuCloseBtn">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <!-- LOGO -->
-    <div class="mobile-logo-wrapper">
-      <a class="mobile-navbar-logo" href="{{ URL::to('/') }}">
-        <img src="{{ asset('front_assets/images/logo.png') }}" alt="Accountech">
-      </a>
-    </div>
-    <!-- MOBILE LINKS -->
-    <ul class="mobile-links">
-      <li><a href="{{ URL::to('/') }}">Home</a></li>
-      <li><a href="{{ URL::to('/about') }}">About Us</a></li>
-      <li><a href="{{ URL::to('/courses') }}">Courses</a></li>
-      <li><a href="{{ URL::to('/services') }}">Services</a></li>
-    </ul>
-    <!-- Buttons -->
-    <div class="mobile-buttons">
-      <a href="{{ URL::to('/contact') }}" class="support-btn">
-        <i class="fa-solid fa-headset"></i> Support
-      </a>
-      <a href="{{ URL::to('/contact') }}" class="contact-btn">
-        Contact Us
-      </a>
-    </div>
-<div class="social-footer">
-  <a href="https://www.facebook.com/share/1CjKpu3mD1/" target="_blank" rel="noopener noreferrer" class="facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D" target="_blank" rel="noopener noreferrer" class="instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.linkedin.com/company/easetoloan" target="_blank" rel="noopener noreferrer" class="linkedin">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  <a href="https://twitter.com/EaseToLoan" target="_blank" rel="noopener noreferrer" class="twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
+    <button class="close-sidebar" id="closeSidebarBtn" aria-label="Close menu">✕</button>
   </div>
-  <!-- OVERLAY -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- MOBILE LINKS -->
+  <ul class="mobile-links">
+    <li><a href="{{ URL::to('/') }}"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="{{ URL::to('/about') }}"><i class="fa-solid fa-user"></i> About Us</a></li>
+    <li><a href="{{ URL::to('/services') }}"><i class="fa-solid fa-bag-shopping"></i> Services</a></li>
+ <li><a href="{{ URL::to('/courses') }}"><i class="fa-solid fa-graduation-cap"></i> Courses</a></li>   
+  </ul>
+  
+  <!-- Buttons -->
+  <div class="mobile-buttons">
+    <a href="{{ URL::to('/contact') }}" class="support-btn">
+      <i class="fa-solid fa-headset"></i> Support
+    </a>
+    <a href="{{ URL::to('/contact') }}" class="contact-btn">
+      Contact Us
+    </a>
+  </div>
+
+  <!-- Social Footer -->
+  <div class="social-footer">
+    <a href="https://www.facebook.com/share/1CjKpu3mD1/" target="_blank" rel="noopener noreferrer" class="facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/easetoloan?igsh=MWJlNmxlOGpsNjg1dw%3D%3D" target="_blank" rel="noopener noreferrer" class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/easetoloan" target="_blank" rel="noopener noreferrer" class="linkedin">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://twitter.com/EaseToLoan" target="_blank" rel="noopener noreferrer" class="twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 
   <!-- main content -->
@@ -112,10 +114,10 @@
       <!-- FOOTER LOGO -->
       <div class="footer-about">
         <a class="navbar-logo" href="{{ URL::to('/') }}">
-          <img src="{{ asset('front_assets/images/logo.png') }}" alt="Accountech">
+          <img src="{{ asset('front_assets/images/logo.png') }}" alt="Account">
         </a>
         <p>
-          Accountech is a professional accounting and training platform
+          Account is a professional accounting and training platform
           providing expert CA services, finance solutions, taxation,
           and industry-ready courses for students and businesses.
         </p>
@@ -187,7 +189,7 @@
         </p>
         <p>
           <i class="fas fa-envelope"></i>
-          <a href="mailto:info@accountech.com">info@accountech.com</a>
+          <a href="mailto:info@caaccount.com">info@caaccount.com</a>
         </p>
         <p>
           <i class="fas fa-map-marker-alt"></i>

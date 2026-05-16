@@ -1,84 +1,110 @@
- (function() {
-      // DOM elements
-      const menuOpenBtn = document.getElementById('menuOpenBtn');
-      const menuCloseBtn = document.getElementById('menuCloseBtn');
-      const mobileSidebar = document.getElementById('mobileSidebar');
-      const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-      // Functions to control sidebar
-      function openSidebar() {
-        if (mobileSidebar) {
-          mobileSidebar.classList.add('open');
-        }
-        if (sidebarOverlay) {
-          sidebarOverlay.classList.add('active');
-        }
-        // prevent body scroll when sidebar open
-        document.body.style.overflow = 'hidden';
+// Wait for DOM to fully load
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Get elements
+  const sidebar = document.getElementById('sidebar');
+  const openBtn = document.getElementById('menuOpenBtn');
+  const closeBtn = document.getElementById('closeSidebarBtn');
+  const overlay = document.getElementById('sidebarOverlay');
+  
+  // Function to open sidebar
+  function openSidebar() {
+    if (sidebar) {
+      sidebar.classList.add('active');
+    }
+    if (overlay) {
+      overlay.classList.add('active');
+    }
+    // Prevent body scrolling
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // Function to close sidebar
+  function closeSidebar() {
+    if (sidebar) {
+      sidebar.classList.remove('active');
+    }
+    if (overlay) {
+      overlay.classList.remove('active');
+    }
+    // Restore body scrolling
+    document.body.style.overflow = '';
+  }
+  
+  // Event Listeners
+  if (openBtn) {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openSidebar();
+    });
+  }
+  
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeSidebar();
+    });
+  }
+  
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeSidebar();
+    });
+  }
+  
+  // Close sidebar when Escape key is pressed
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (sidebar && sidebar.classList.contains('active')) {
+        closeSidebar();
       }
-
-      function closeSidebar() {
-        if (mobileSidebar) {
-          mobileSidebar.classList.remove('open');
-        }
-        if (sidebarOverlay) {
-          sidebarOverlay.classList.remove('active');
-        }
-        // restore scroll
-        document.body.style.overflow = '';
-      }
-
-      // Event listeners
-      if (menuOpenBtn) {
-        menuOpenBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          openSidebar();
-        });
-      }
-
-      if (menuCloseBtn) {
-        menuCloseBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          closeSidebar();
-        });
-      }
-
-      if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', (e) => {
-          closeSidebar();
-        });
-      }
-
-      // Optional: close sidebar on escape key press
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileSidebar && mobileSidebar.classList.contains('open')) {
-          closeSidebar();
-        }
-      });
-
-      // For any internal links inside mobile sidebar (like anchor tags), close after navigation (optional)
-      const mobileLinks = document.querySelectorAll('.mobile-links a, .mobile-buttons a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // only if the href is not just '#', but keep original behavior.
-          // we close sidebar after click for better UX on mobile
-          if (window.innerWidth <= 820) {
-            // Small delay to allow navigation event
-            setTimeout(() => {
-              closeSidebar();
-            }, 150);
+    }
+  });
+  
+  // Optional: Close sidebar when clicking on any mobile link
+  const mobileLinks = document.querySelectorAll('.mobile-links a, .mobile-buttons a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Small delay to allow navigation
+      setTimeout(closeSidebar, 100);
+    });
+  });
+  
+  // Prevent body scroll when sidebar is open
+  if (sidebar) {
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          if (sidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
           }
-        });
+        }
       });
+    });
+    
+    observer.observe(sidebar, { attributes: true });
+  }
+});
 
-      // window resize: if sidebar open and window size > 820px, we auto close? (optional good practice)
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 820 && mobileSidebar && mobileSidebar.classList.contains('open')) {
-          closeSidebar();
-        }
-        // Reset body overflow if needed
-        if (window.innerWidth > 820 && document.body.style.overflow === 'hidden') {
-          document.body.style.overflow = '';
-        }
-      });
-    })();
+// Add scroll effect to navbar
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.custom-navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Add active class to current page link
+const currentLocation = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-links li a');
+navLinks.forEach(link => {
+  if (link.getAttribute('href') === currentLocation) {
+    link.parentElement.classList.add('active');
+  }
+});
