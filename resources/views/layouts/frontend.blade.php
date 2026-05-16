@@ -190,11 +190,11 @@
           <h4>Our Services</h4>
 
           <ul>
-            <li><a href="{{ route('service.detail', 5) }}">GST Filing</a></li>
-            <li><a href="{{ route('service.detail', 2) }}">Income Tax</a></li>
-            <li><a href="{{ route('service.detail', 6) }}">Company Registration</a></li>
-            <li><a href="{{ route('service.detail', 1) }}">Audit Services</a></li>
-            <li><a href="{{ route('service.detail', 4) }}">Business Consultancy</a></li>
+            <li><a href="">GST Filing</a></li>
+            <li><a href="">Income Tax</a></li>
+            <li><a href="">Company Registration</a></li>
+            <li><a href="">Audit Services</a></li>
+            <li><a href="">Business Consultancy</a></li>
           </ul>
 
         </div>
@@ -205,11 +205,11 @@
           <h4>Courses</h4>
 
           <ul>
-            <li><a href="{{ route('course.detail', 1) }}">Tally Prime</a></li>
-            <li><a href="{{ route('course.detail', 2) }}">GST Course</a></li>
-            <li><a href="{{ route('course.detail', 3) }}">Advanced Excel</a></li>
-            <li><a href="{{ route('course.detail', 4) }}">Accounting Training</a></li>
-            <li><a href="{{ route('course.detail', 5) }}">Taxation Course</a></li>
+            <li><a href="">Tally Prime</a></li>
+            <li><a href="">GST Course</a></li>
+            <li><a href="">Advanced Excel</a></li>
+            <li><a href="">Accounting Training</a></li>
+            <li><a href="">Taxation Course</a></li>
           </ul>
 
         </div>
