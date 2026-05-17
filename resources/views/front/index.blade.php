@@ -342,7 +342,7 @@
             <div class="course-card wow animate__animated animate__fadeInUp" data-delay="0.3s">
                 <div class="course-badge">Popular</div>
                 <div class="course-image">
-                    <img src="{{ asset('front_assets/images/course3.jpeg') }}" alt="Tally Course">
+                    <img src="{{ asset('front_assets/images/course3.jpg') }}" alt="Tally Course">
                     <div class="course-overlay">
                         <a href="#" class="preview-btn"><i class="fas fa-play"></i> Preview</a>
                     </div>
@@ -373,7 +373,7 @@
             <!-- Course 4 - NEW -->
             <div class="course-card wow animate__animated animate__fadeInUp" data-delay="0.4s">
                 <div class="course-image">
-                    <img src="{{ asset('front_assets/images/course4.jpeg') }}" alt="GST Course">
+                    <img src="{{ asset('front_assets/images/course4.jpg') }}" alt="GST Course">
                     <div class="course-overlay">
                         <a href="#" class="preview-btn"><i class="fas fa-play"></i> Preview</a>
                     </div>
@@ -405,7 +405,7 @@
             <div class="course-card wow animate__animated animate__fadeInUp" data-delay="0.5s">
                 <div class="course-badge featured">New</div>
                 <div class="course-image">
-                    <img src="{{ asset('front_assets/images/course5.jpeg') }}" alt="SAP Course">
+                    <img src="{{ asset('front_assets/images/course5.jpg') }}" alt="SAP Course">
                     <div class="course-overlay">
                         <a href="#" class="preview-btn"><i class="fas fa-play"></i> Preview</a>
                     </div>
@@ -436,7 +436,7 @@
             <!-- Course 6 - NEW -->
             <div class="course-card wow animate__animated animate__fadeInUp" data-delay="0.6s">
                 <div class="course-image">
-                    <img src="{{ asset('front_assets/images/course6.jpeg') }}" alt="Excel Course">
+                    <img src="{{ asset('front_assets/images/course6.jpg') }}" alt="Excel Course">
                     <div class="course-overlay">
                         <a href="#" class="preview-btn"><i class="fas fa-play"></i> Preview</a>
                     </div>

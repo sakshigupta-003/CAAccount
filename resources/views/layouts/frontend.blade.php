@@ -156,11 +156,11 @@
       <div class="footer-links">
         <h4>Our Services</h4>
         <ul>
-          <li><a href="#">GST Filing</a></li>
-          <li><a href="#">Income Tax</a></li>
-          <li><a href="#">Company Registration</a></li>
-          <li><a href="#">Audit Services</a></li>
-          <li><a href="#">Business Consultancy</a></li>
+          <li><a href="#">Financial Planning</a></li>
+          <li><a href="#">Tax Consultation</a></li>
+          <li><a href="#">Audit & Assurance</a></li>
+          <li><a href="#">Business Advisory</a></li>
+           <li><a href="#">Investment Management</a></li>
         </ul>
       </div>
 
@@ -168,11 +168,11 @@
       <div class="footer-links">
         <h4>Courses</h4>
         <ul>
-          <li><a href="#">Tally Prime</a></li>
+          <li><a href="#">Accounting & Taxation</a></li>
+          <li><a href="#">Investment Banking</a></li>
+          <li><a href="#">Tally Prime & ERP 9 </a></li>
           <li><a href="#">GST Course</a></li>
-          <li><a href="#">Advanced Excel</a></li>
-          <li><a href="#">Accounting Training</a></li>
-          <li><a href="#">Taxation Course</a></li>
+          <li><a href="#">SAP FICO Certification</a></li>
         </ul>
       </div>
 
